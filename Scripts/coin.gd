@@ -1,10 +1,11 @@
 extends Area2D
 
-
-# Called when the node enters the scene tree for the first time.
-
-
+var collected = false
 
 func _on_body_entered(body):
-	print ("+1 coin")
-	queue_free() # Replace with function body.
+	if not collected:
+		$AudioStreamPlayer2D.play()
+		print("+1 coin")
+		hide()
+		collected = true
+		# Disable collision
