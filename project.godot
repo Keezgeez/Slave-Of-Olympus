@@ -14,3 +14,7 @@ config/name="Slave-of-Olympus"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[layer_names]
+
+2d_physics/layer_1="Character"
