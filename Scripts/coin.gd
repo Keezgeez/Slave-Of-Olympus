@@ -3,8 +3,8 @@ extends Area2D
 #var collected = false
 
 func _on_body_entered(body):
-	#if not collected:
-	#	$AudioStreamPlayer2D.play()
+	#if not collected:@onready var coins = $Coins
+
 	#	print("+1 coin")
 	#	hide()
 	#	collected = true
