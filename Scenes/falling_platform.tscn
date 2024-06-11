@@ -1,0 +1,276 @@
+[gd_scene load_steps=18 format=3 uid="uid://js2a4p01kkx3"]
+
+[ext_resource type="Script" path="res://Falling_Platform.gd" id="1_ug4y0"]
+[ext_resource type="Texture2D" uid="uid://whyh77ycl45k" path="res://Assets/Blocks/SLAB.png" id="2_nnvs8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l46qu"]
+size = Vector2(32, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gbxui"]
+size = Vector2(32, 2)
+
+[sub_resource type="Animation" id="Animation_pkitc"]
+resource_name = "Falling"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 3.03143, 1),
+"update": 0,
+"values": [Vector2(0, 9), Vector2(-1, 9), Vector2(1, 9), Vector2(-1, 9), Vector2(1, 9), Vector2(-1, 9), Vector2(1, 9), Vector2(0, 9), Vector2(0, 249)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Platform:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Platform:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.3, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2mflo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1, 9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Platform:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Platform:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dmbrj"]
+resource_name = "Regenerate"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Platform:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(3.24901, 3.605),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Platform:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(2.92817, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(0, 9)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"back_to_static"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_wemf0"]
+resource_name = "Static"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 9)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Platform:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xs3qo"]
+_data = {
+"Falling": SubResource("Animation_pkitc"),
+"RESET": SubResource("Animation_2mflo"),
+"Regenerate": SubResource("Animation_dmbrj"),
+"Static": SubResource("Animation_wemf0")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_64im1"]
+animation = &"Falling"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tlcsy"]
+animation = &"Regenerate"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_23fpl"]
+animation = &"Static"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5b0kc"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_pmx15"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ben7f"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aghpf"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1ai1u"]
+states/End/position = Vector2(922, 77)
+states/Falling/node = SubResource("AnimationNodeAnimation_64im1")
+states/Falling/position = Vector2(477, 23)
+states/Regenerate/node = SubResource("AnimationNodeAnimation_tlcsy")
+states/Regenerate/position = Vector2(625, 83)
+states/Start/position = Vector2(237, 83)
+states/Static/node = SubResource("AnimationNodeAnimation_23fpl")
+states/Static/position = Vector2(375, 83)
+transitions = ["Static", "Falling", SubResource("AnimationNodeStateMachineTransition_5b0kc"), "Falling", "Regenerate", SubResource("AnimationNodeStateMachineTransition_pmx15"), "Regenerate", "Static", SubResource("AnimationNodeStateMachineTransition_ben7f"), "Start", "Static", SubResource("AnimationNodeStateMachineTransition_aghpf")]
+
+[node name="Falling_Platform" type="StaticBody2D"]
+script = ExtResource("1_ug4y0")
+
+[node name="outline" type="Sprite2D" parent="."]
+
+[node name="Platform" type="Sprite2D" parent="."]
+position = Vector2(-1, 9)
+texture = ExtResource("2_nnvs8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_l46qu")
+
+[node name="Activation" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Activation"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_gbxui")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xs3qo")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_1ai1u")
+advance_expression_base_node = NodePath("")
+anim_player = NodePath("../AnimationPlayer")
+
+[connection signal="body_entered" from="Activation" to="." method="_on_activation_body_entered"]
