@@ -2,10 +2,14 @@ extends CharacterBody2D
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const SPEED = 300.0
 =======
 const SPEED = 250.0
 >>>>>>> Topepipopuu
+=======
+const SPEED = 250.0
+>>>>>>> c130e6e92f8ccef3d1ec46d10d595a01e6cb00eb
 const JUMP_VELOCITY = -500.0
 
 var is_jumping = false
