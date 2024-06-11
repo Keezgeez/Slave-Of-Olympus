@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bk5ts2kw0uv3n"]
+
+[ext_resource type="Texture2D" uid="uid://dkc2tsdtlqndn" path="res://Assets/Slave/mc_idle.png" id="1_larif"]
+[ext_resource type="Script" path="res://Scripts/slave.gd" id="1_lxv1b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yupji"]
+atlas = ExtResource("1_larif")
+region = Rect2(0, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73v85"]
+atlas = ExtResource("1_larif")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ky0n8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yupji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73v85")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.5
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v1bcm"]
+height = 42.0
+
+[node name="Slave" type="CharacterBody2D"]
+script = ExtResource("1_lxv1b")
+
+[node name="Slaave" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ky0n8")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.852894
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_v1bcm")
