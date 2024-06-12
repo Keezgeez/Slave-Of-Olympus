@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://bm8dckq2mb1vr"]
+[gd_scene load_steps=19 format=3 uid="uid://bm8dckq2mb1vr"]
 
 [ext_resource type="PackedScene" uid="uid://bk5ts2kw0uv3n" path="res://Scenes/slave.tscn" id="1_6844a"]
-[ext_resource type="PackedScene" path="res://Scenes/coin.tscn" id="1_n1ae5"]
+[ext_resource type="PackedScene" uid="uid://cgf0bttuvf7vv" path="res://Scenes/coin.tscn" id="1_n1ae5"]
 [ext_resource type="Texture2D" uid="uid://bnfeam3v2x6ct" path="res://Assets/Blocks/1.png" id="2_co6eg"]
 [ext_resource type="Texture2D" uid="uid://cn12nhyeygvja" path="res://Assets/Blocks/2.png" id="3_lhl1v"]
 [ext_resource type="Texture2D" uid="uid://bp5tx2fqnvxpt" path="res://Assets/Blocks/3.png" id="4_4s638"]
 [ext_resource type="Texture2D" uid="uid://ccpvb5lk5ucrc" path="res://Assets/Blocks/4.png" id="5_8g3jq"]
 [ext_resource type="Texture2D" uid="uid://whyh77ycl45k" path="res://Assets/Blocks/SLAB.png" id="6_c8pi3"]
+[ext_resource type="Script" path="res://Scenes/movingPlatform.gd" id="8_lvkge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ttem"]
 texture = ExtResource("2_co6eg")
@@ -56,6 +57,47 @@ sources/1 = SubResource("TileSetAtlasSource_dbf5k")
 sources/2 = SubResource("TileSetAtlasSource_vvgun")
 sources/3 = SubResource("TileSetAtlasSource_qvfy6")
 sources/4 = SubResource("TileSetAtlasSource_nbv5u")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwdtg"]
+size = Vector2(120, 32)
+
+[sub_resource type="Animation" id="Animation_gmeqq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -100)]
+}
+
+[sub_resource type="Animation" id="Animation_6lvew"]
+resource_name = "newAnimation"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -100), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jhcf4"]
+_data = {
+"RESET": SubResource("Animation_gmeqq"),
+"newAnimation": SubResource("Animation_6lvew")
+}
 
 [node name="Game" type="Node2D"]
 
@@ -225,3 +267,23 @@ position = Vector2(820, -16)
 
 [node name="Coin52" parent="." instance=ExtResource("1_n1ae5")]
 position = Vector2(841, -16)
+
+[node name="movingPlatform" type="AnimatableBody2D" parent="."]
+position = Vector2(0, -100)
+script = ExtResource("8_lvkge")
+
+[node name="platform" type="Sprite2D" parent="movingPlatform"]
+position = Vector2(928, -86)
+scale = Vector2(3.75, 1)
+texture = ExtResource("2_co6eg")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="movingPlatform"]
+position = Vector2(928, -86)
+shape = SubResource("RectangleShape2D_vwdtg")
+metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="movingPlatform"]
+libraries = {
+"": SubResource("AnimationLibrary_jhcf4")
+}
