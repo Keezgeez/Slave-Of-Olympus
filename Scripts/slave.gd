@@ -2,13 +2,14 @@ extends CharacterBody2D
 
 
 const SPEED = 250.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -600.0
 
 var is_jumping = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var slaave = $Slaave
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -33,6 +34,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 			is_jumping = true
+			
 			
 		if is_on_floor():
 			is_jumping = false
