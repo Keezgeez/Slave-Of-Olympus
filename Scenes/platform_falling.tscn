@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://c66sd07qyxyht"]
 
 [ext_resource type="Texture2D" uid="uid://whyh77ycl45k" path="res://Assets/Blocks/SLAB.png" id="1_jikp5"]
-[ext_resource type="Script" path="res://Scenes/platform_falling.gd" id="1_lcm7d"]
+[ext_resource type="Script" path="res://Scripts/platform_falling.gd" id="1_lcm7d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74k32"]
 size = Vector2(32, 16)
