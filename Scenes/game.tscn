@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://whyh77ycl45k" path="res://Assets/Blocks/SLAB.png" id="6_c8pi3"]
 [ext_resource type="PackedScene" uid="uid://ds4g2alyym1nv" path="res://Scenes/k_illzone.tscn" id="8_5kiph"]
 [ext_resource type="PackedScene" uid="uid://qlkum7x2dw3b" path="res://Scenes/canine.tscn" id="9_7hhp0"]
-[ext_resource type="PackedScene" path="res://Scenes/platform_falling.tscn" id="10_g8kep"]
+[ext_resource type="PackedScene" uid="uid://c66sd07qyxyht" path="res://Scenes/platform_falling.tscn" id="10_g8kep"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ttem"]
 texture = ExtResource("2_co6eg")
