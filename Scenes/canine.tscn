@@ -30,6 +30,11 @@ region = Rect2(240, 32, 48, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqc7q"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"Bite",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_teswi")
@@ -62,8 +67,8 @@ script = ExtResource("1_jvtkg")
 
 [node name="CanineEnemy" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gqc7q")
+animation = &"Bite"
 autoplay = "default"
-frame_progress = 0.132984
 
 [node name="Killzone" parent="." instance=ExtResource("2_fh4dy")]
 
@@ -78,3 +83,5 @@ target_position = Vector2(18, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(2, 5)
 target_position = Vector2(-18, 0)
+
+[connection signal="body_entered" from="Killzone" to="." method="_on_killzone_body_entered"]
