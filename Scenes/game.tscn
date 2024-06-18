@@ -210,7 +210,7 @@ _data = {
 position = Vector2(557, -95)
 
 [node name="Slave" parent="." instance=ExtResource("1_6844a")]
-position = Vector2(4394, -1081)
+position = Vector2(-152, -66)
 
 [node name="Camera2D" type="Camera2D" parent="Slave"]
 limit_bottom = 660
@@ -307,7 +307,7 @@ position = Vector2(778, -16)
 position = Vector2(820, -16)
 
 [node name="KIllzone" parent="." instance=ExtResource("8_5kiph")]
-position = Vector2(4394, -1081)
+position = Vector2(-152, -66)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KIllzone"]
 position = Vector2(517, 742)
