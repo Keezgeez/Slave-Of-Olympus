@@ -1,0 +1,136 @@
+[gd_scene load_steps=12 format=3 uid="uid://cpxgs0xt4hrks"]
+
+[ext_resource type="Script" path="res://Main Menu.gd" id="1_uhn3n"]
+[ext_resource type="Texture2D" uid="uid://bchq32qrk2trw" path="res://Assets/MainMenu/GreekBackGround.jpg" id="3_hom5y"]
+
+[sub_resource type="Theme" id="Theme_6t2jy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g7rqm"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0u71h"]
+bg_color = Color(0.0588235, 0.298039, 0.360784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ba6c8"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_st1ly"]
+bg_color = Color(1, 0.890196, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_fafpa"]
+font_names = PackedStringArray("Courier New")
+subpixel_positioning = 3
+oversampling = 10.0
+
+[sub_resource type="Theme" id="Theme_f2ro6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hchq4"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hqo8s"]
+bg_color = Color(0.0588235, 0.298039, 0.360784, 1)
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uhn3n")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -575.0
+offset_top = -320.0
+offset_right = -575.0
+offset_bottom = -320.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_hom5y")
+
+[node name="MarginContainer2" type="MarginContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 380.0
+offset_right = 687.0
+offset_bottom = 481.0
+theme = SubResource("Theme_6t2jy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer2"]
+layout_mode = 2
+
+[node name="How To Play" type="Button" parent="TextureRect/MarginContainer2/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.858824, 0, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_g7rqm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0u71h")
+text = "How To Play"
+
+[node name="MarginContainer3" type="MarginContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 424.0
+offset_right = 687.0
+offset_bottom = 525.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer3"]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="TextureRect/MarginContainer3/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.858824, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_ba6c8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_st1ly")
+text = "Quit"
+
+[node name="Title" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 22.0
+offset_right = 905.0
+offset_bottom = 91.0
+theme_override_fonts/font = SubResource("SystemFont_fafpa")
+theme_override_font_sizes/font_size = 50
+text = "Slave Of Olympus
+"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -56.0
+offset_top = -54.0
+offset_right = 47.0
+offset_bottom = 47.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme = SubResource("Theme_f2ro6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.85771, 4.23551e-06, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_hchq4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hqo8s")
+keep_pressed_outside = true
+text = "Play"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 4)
+zoom = Vector2(0.9, 0.81)
+
+[connection signal="pressed" from="TextureRect/MarginContainer2/VBoxContainer/How To Play" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer3/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
