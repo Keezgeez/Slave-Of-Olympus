@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bp5tx2fqnvxpt" path="res://Assets/Blocks/3.png" id="4_4s638"]
 [ext_resource type="Texture2D" uid="uid://ccpvb5lk5ucrc" path="res://Assets/Blocks/4.png" id="5_8g3jq"]
 [ext_resource type="Texture2D" uid="uid://whyh77ycl45k" path="res://Assets/Blocks/SLAB.png" id="6_c8pi3"]
-[ext_resource type="PackedScene" path="res://Scenes/k_illzone.tscn" id="8_5kiph"]
+[ext_resource type="PackedScene" uid="uid://ds4g2alyym1nv" path="res://Scenes/k_illzone.tscn" id="8_5kiph"]
 [ext_resource type="PackedScene" uid="uid://qlkum7x2dw3b" path="res://Scenes/canine.tscn" id="9_7hhp0"]
 [ext_resource type="PackedScene" uid="uid://c66sd07qyxyht" path="res://Scenes/platform_falling.tscn" id="10_g8kep"]
 [ext_resource type="Script" path="res://Scripts/firstMovingPlatform.gd" id="11_0xv02"]
@@ -207,9 +207,10 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
+position = Vector2(557, -95)
 
 [node name="Slave" parent="." instance=ExtResource("1_6844a")]
-position = Vector2(1046, -36)
+position = Vector2(-147, -31)
 
 [node name="Camera2D" type="Camera2D" parent="Slave"]
 limit_bottom = 660
@@ -306,7 +307,7 @@ position = Vector2(778, -16)
 position = Vector2(820, -16)
 
 [node name="KIllzone" parent="." instance=ExtResource("8_5kiph")]
-position = Vector2(-169, -40)
+position = Vector2(-147, -31)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KIllzone"]
 position = Vector2(517, 742)

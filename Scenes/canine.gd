@@ -4,6 +4,7 @@ const SPEED = 60
 
 var direction = 1
 
+
 @onready var ray_cast_right = $RayCastRight
 @onready var ray_cast_left = $RayCastLeft
 @onready var canine_enemy = $CanineEnemy
@@ -22,6 +23,7 @@ func _process(delta):
 	
 	position.x += direction * SPEED * delta
 
-
 func _on_killzone_body_entered(body):
-	pass # Replace with function body.
+	canine_enemy.play("Bite")
+	print ("bitebite")
+

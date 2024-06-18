@@ -1,8 +1,36 @@
-[gd_scene load_steps=12 format=3 uid="uid://qlkum7x2dw3b"]
+[gd_scene load_steps=19 format=3 uid="uid://qlkum7x2dw3b"]
 
 [ext_resource type="Script" path="res://Scenes/canine.gd" id="1_jvtkg"]
 [ext_resource type="Texture2D" uid="uid://c80dsbu7u33oe" path="res://Assets/Enemies/EnemyCanine.png" id="1_spehl"]
 [ext_resource type="PackedScene" uid="uid://ds4g2alyym1nv" path="res://Scenes/k_illzone.tscn" id="2_fh4dy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjjci"]
+atlas = ExtResource("1_spehl")
+region = Rect2(0, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rhy3"]
+atlas = ExtResource("1_spehl")
+region = Rect2(48, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq4dh"]
+atlas = ExtResource("1_spehl")
+region = Rect2(96, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6vph"]
+atlas = ExtResource("1_spehl")
+region = Rect2(144, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxlbn"]
+atlas = ExtResource("1_spehl")
+region = Rect2(192, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbeuh"]
+atlas = ExtResource("1_spehl")
+region = Rect2(240, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udw5j"]
+atlas = ExtResource("1_spehl")
+region = Rect2(288, 96, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_teswi"]
 atlas = ExtResource("1_spehl")
@@ -30,10 +58,31 @@ region = Rect2(240, 32, 48, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gqc7q"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjjci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rhy3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq4dh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6vph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxlbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbeuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udw5j")
+}],
 "loop": true,
 "name": &"Bite",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -69,6 +118,7 @@ script = ExtResource("1_jvtkg")
 sprite_frames = SubResource("SpriteFrames_gqc7q")
 animation = &"Bite"
 autoplay = "default"
+frame_progress = 0.972645
 
 [node name="Killzone" parent="." instance=ExtResource("2_fh4dy")]
 
