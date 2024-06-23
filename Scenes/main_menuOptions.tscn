@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://btxkyb7cj2mnq"]
+[gd_scene load_steps=4 format=3 uid="uid://btxkyb7cj2mnq"]
 
 [ext_resource type="Script" path="res://Scenes/main_menuOptions.gd" id="1_py55x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lyywy"]
+bg_color = Color(0, 0, 0, 1)
+draw_center = false
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m77y0"]
+bg_color = Color(0, 0, 0, 1)
+draw_center = false
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -26,9 +38,13 @@ layout_mode = 2
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_lyywy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m77y0")
 text = "Back"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_play_pressed"]
