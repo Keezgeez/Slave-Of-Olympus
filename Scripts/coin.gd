@@ -2,6 +2,8 @@ extends Area2D
 
 #var collected = false
 
+var coins = 0
+
 func _on_body_entered(body):
 	#if not collected:@onready var coins = $Coins
 
@@ -18,6 +20,7 @@ func _on_body_entered(body):
 			tween.tween_property(self, "modulate:a", 0.0, 0.5)
 			
 			$AudioStreamPlayer2D.play()
-			print("+1 coin")
+			
+			coins += 1
 			
 			tween.tween_callback(self.queue_free)
