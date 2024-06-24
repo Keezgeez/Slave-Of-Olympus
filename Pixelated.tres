@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://dmhp6h0g7gnka"]
+
+[ext_resource type="FontFile" uid="uid://bcyl0krkskbkv" path="res://Assets/FontText/disposabledroid-bb.regular.ttf" id="1_tn4iy"]
+
+[resource]
+base_font = ExtResource("1_tn4iy")

@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddlds0x0w5hc2"]
+[gd_scene load_steps=3 format=3 uid="uid://4wgs2qpp7ss6"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_utkik"]
+[ext_resource type="FontFile" path="res://Assets/FontText/disposabledroid-bb.regular.ttf" id="2_nt56g"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_utkik")
 
 [node name="CoinCount" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_top = 67.0
+offset_right = 55.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("2_nt56g")
+theme_override_font_sizes/font_size = 20
 text = "Coins"
