@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dujbfx3ykpkm4"]
 
 [ext_resource type="Texture2D" uid="uid://dhe4h70exwh1k" path="res://Assets/Flag/FinalFlag.png" id="1_j57b2"]
-[ext_resource type="Script" path="res://Scenes/checkpoint.gd" id="1_rtmge"]
+[ext_resource type="Script" path="res://Scripts/checkpoint.gd" id="1_tcatg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2q04"]
 atlas = ExtResource("1_j57b2")
@@ -48,7 +48,7 @@ animations = [{
 size = Vector2(6, 45)
 
 [node name="Checkpoint" type="Node2D"]
-script = ExtResource("1_rtmge")
+script = ExtResource("1_tcatg")
 
 [node name="Flag" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r4wph")
