@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://2v6qhyyo1nus"]
+[gd_scene load_steps=17 format=3 uid="uid://2v6qhyyo1nus"]
 
 [ext_resource type="Texture2D" uid="uid://bus3xuwmlo0rb" path="res://Assets/InGameBackground/GameBG.png" id="1_2wbgu"]
 [ext_resource type="Texture2D" uid="uid://bnfeam3v2x6ct" path="res://Assets/Blocks/1.png" id="1_h81we"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c66sd07qyxyht" path="res://Scenes/platform_falling.tscn" id="7_83bys"]
 [ext_resource type="PackedScene" uid="uid://cgf0bttuvf7vv" path="res://Scenes/coin.tscn" id="8_k8s5h"]
 [ext_resource type="FontFile" uid="uid://bcyl0krkskbkv" path="res://Assets/FontText/disposabledroid-bb.regular.ttf" id="9_cvnpv"]
-[ext_resource type="Script" path="res://Node2D.gd" id="11_2axn5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ttem"]
 texture = ExtResource("1_h81we")
@@ -283,30 +282,3 @@ position = Vector2(1756, -4)
 
 [node name="falling_platform12" parent="." instance=ExtResource("7_83bys")]
 position = Vector2(1788, -4)
-
-[node name="Node2D" type="Node2D" parent="."]
-script = ExtResource("11_2axn5")
-
-[node name="ColorRect" type="ColorRect" parent="Node2D"]
-offset_left = 224.0
-offset_top = -549.0
-offset_right = 2487.0
-offset_bottom = 576.0
-color = Color(0, 0.466667, 1, 0)
-
-[node name="Label" type="Label" parent="Node2D"]
-offset_left = 1296.0
-offset_top = -493.0
-offset_right = 1599.0
-offset_bottom = -349.0
-text = "Tutorial
-"
-
-[node name="Button" type="Button" parent="Node2D"]
-offset_left = 2478.0
-offset_top = -142.0
-offset_right = 2654.0
-offset_bottom = -90.0
-text = "Next Level"
-
-[connection signal="pressed" from="Node2D/Button" to="Node2D" method="_on_button_pressed"]
