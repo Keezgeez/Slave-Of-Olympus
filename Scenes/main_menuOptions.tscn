@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://btxkyb7cj2mnq"]
 
 [ext_resource type="Script" path="res://Scenes/main_menuOptions.gd" id="1_py55x"]
-[ext_resource type="FontFile" path="res://Assets/FontText/disposabledroid-bb.regular.ttf" id="2_0686i"]
+[ext_resource type="FontFile" uid="uid://bcyl0krkskbkv" path="res://Assets/FontText/disposabledroid-bb.regular.ttf" id="2_0686i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lyywy"]
 bg_color = Color(0, 0, 0, 1)

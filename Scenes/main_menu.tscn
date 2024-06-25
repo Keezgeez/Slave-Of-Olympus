@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Main Menu.gd" id="1_uhn3n"]
 [ext_resource type="Texture2D" uid="uid://bcqpewgiwdwhg" path="res://Assets/MainMenu/Background.jpg" id="2_dypto"]
-[ext_resource type="FontFile" path="res://Assets/FontText/disposabledroid-bb.regular.ttf" id="3_iulsh"]
+[ext_resource type="FontFile" uid="uid://bcyl0krkskbkv" path="res://Assets/FontText/disposabledroid-bb.regular.ttf" id="3_iulsh"]
 [ext_resource type="Texture2D" uid="uid://ddscju1gvm4pg" path="res://Assets/MainMenu/PixelTextTitle.png" id="3_ywp0p"]
 [ext_resource type="AudioStream" uid="uid://cab1yju8q8he4" path="res://Assets/SoundFX/Joshua McLean - Mountain Trials  NO COPYRIGHT 8-bit Music.mp3" id="4_8jilv"]
 
