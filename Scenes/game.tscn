@@ -16,7 +16,7 @@
 [ext_resource type="Script" path="res://Scripts/fourthMovingPlatform.gd" id="15_r4e3l"]
 [ext_resource type="Script" path="res://Scripts/fifthMovingPlatform.gd" id="16_ucaja"]
 [ext_resource type="Script" path="res://Scripts/sixthMovingPlatform.gd" id="17_jwtfm"]
-[ext_resource type="Script" path="res://Scenes/seventhMovingPlatform.gd" id="18_15r15"]
+[ext_resource type="Script" path="res://Scripts/seventhMovingPlatform.gd" id="18_15r15"]
 [ext_resource type="PackedScene" uid="uid://bplaekyvrylor" path="res://Scenes/hitpoints.tscn" id="20_12ydy"]
 [ext_resource type="PackedScene" uid="uid://4wgs2qpp7ss6" path="res://Scenes/hud.tscn" id="20_rwnhf"]
 [ext_resource type="PackedScene" uid="uid://dujbfx3ykpkm4" path="res://Scenes/checkpoint.tscn" id="21_ssroo"]

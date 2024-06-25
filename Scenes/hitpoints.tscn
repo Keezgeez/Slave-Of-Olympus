@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bplaekyvrylor"]
 
-[ext_resource type="Script" path="res://Scenes/hitpoints.gd" id="1_ecyco"]
+[ext_resource type="Script" path="res://Scripts/hitpoints.gd" id="1_ecyco"]
 [ext_resource type="Texture2D" uid="uid://c7bcw061kyh18" path="res://Assets/HitPoints/harthart.png" id="1_xlg5m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mpuar"]

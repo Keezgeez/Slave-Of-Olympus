@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=3 uid="uid://u8rednxgr1y3"]
+
+[ext_resource type="Texture2D" uid="uid://cagjxuajkw3dh" path="res://Assets/Zeus/FinalZeus.png" id="2_l8qxs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q44p"]
+atlas = ExtResource("2_l8qxs")
+region = Rect2(0, 112, 80, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hm8dn"]
+atlas = ExtResource("2_l8qxs")
+region = Rect2(80, 112, 80, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ri0ga"]
+atlas = ExtResource("2_l8qxs")
+region = Rect2(160, 112, 80, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i1k2"]
+atlas = ExtResource("2_l8qxs")
+region = Rect2(240, 112, 80, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xb1g"]
+atlas = ExtResource("2_l8qxs")
+region = Rect2(0, 112, 80, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42vep"]
+atlas = ExtResource("2_l8qxs")
+region = Rect2(80, 112, 80, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo8rp"]
+atlas = ExtResource("2_l8qxs")
+region = Rect2(160, 112, 80, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17fml"]
+atlas = ExtResource("2_l8qxs")
+region = Rect2(240, 112, 80, 112)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0qq7b"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"ZeusLeft",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q44p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hm8dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ri0ga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i1k2")
+}],
+"loop": true,
+"name": &"ZeusLeft_1",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xb1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42vep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fo8rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17fml")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hayfv"]
+radius = 22.0
+height = 106.0
+
+[node name="ZeuZ" type="Area2D"]
+
+[node name="Zeus" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0qq7b")
+autoplay = "ZeusLeft_1"
+frame_progress = 0.192712
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_hayfv")

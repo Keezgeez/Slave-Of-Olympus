@@ -10,9 +10,6 @@ var jumping_upward = false
 
 @onready var slaave = $Slaave
 
-func _process(delta):
-	print (global_position)
-
 func _ready():
 	respawnPosition = global_position
 
