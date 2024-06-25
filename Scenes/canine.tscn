@@ -108,8 +108,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdyr8"]
-size = Vector2(38, 9)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xq2ne"]
+size = Vector2(35, 15)
 
 [node name="Canine" type="Node2D"]
 script = ExtResource("1_37v7c")
@@ -123,8 +123,8 @@ frame_progress = 0.972645
 [node name="Killzone" parent="." instance=ExtResource("2_fh4dy")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(2, 5)
-shape = SubResource("RectangleShape2D_vdyr8")
+position = Vector2(1.5, 2.5)
+shape = SubResource("RectangleShape2D_xq2ne")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(2, 5)

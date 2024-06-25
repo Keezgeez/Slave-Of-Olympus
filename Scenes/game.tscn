@@ -203,7 +203,7 @@ _data = {
 position = Vector2(557, -95)
 
 [node name="Slave" parent="." instance=ExtResource("1_6844a")]
-position = Vector2(-169, -40)
+position = Vector2(4476, -1085)
 
 [node name="Camera2D" type="Camera2D" parent="Slave"]
 position = Vector2(0, 2)
@@ -309,12 +309,6 @@ position = Vector2(-152, -66)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KIllzone"]
 position = Vector2(517, 742)
 shape = SubResource("WorldBoundaryShape2D_b4vnu")
-
-[node name="Canine" parent="." instance=ExtResource("9_7hhp0")]
-position = Vector2(4850, -913)
-
-[node name="Canine2" parent="." instance=ExtResource("9_7hhp0")]
-position = Vector2(4562, -913)
 
 [node name="falling_platform2" parent="." instance=ExtResource("10_g8kep")]
 position = Vector2(1328, 79)
@@ -569,6 +563,12 @@ position = Vector2(307, -17)
 
 [node name="Checkpoint" parent="." instance=ExtResource("21_ssroo")]
 position = Vector2(-9, -90)
+
+[node name="Canine" parent="." instance=ExtResource("9_7hhp0")]
+position = Vector2(4567, -914)
+
+[node name="Canine2" parent="." instance=ExtResource("9_7hhp0")]
+position = Vector2(4854, -913)
 
 [connection signal="body_entered" from="Coin3" to="HUD" method="_on_coin_3_body_entered"]
 [connection signal="body_entered" from="Coin4" to="HUD" method="_on_coin_3_body_entered"]
