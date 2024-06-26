@@ -199,5 +199,5 @@ volume_db = -20.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HowToPlay" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Play" to="." method="_on_how_to_play_pressed"]
-[connection signal="pressed" from="MarginContainer3/Quit" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="MarginContainer3/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer3/Quit" to="." method="_on_how_to_play_pressed"]

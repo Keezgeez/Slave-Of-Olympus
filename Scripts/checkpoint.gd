@@ -1,13 +1,19 @@
 extends Node2D
 
-var player = null
-var activeFlag = null
-var checkpointPosition =  Vector2(-9, -90)
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	player = $"../Slave"
-
+signal CheckpointUp
 
 func _on_flags_body_entered(body):
-		$Flag.play("Checkpoint")
+	emit_signal("CheckpointUp")
+	$"../Slave".death_pos = position
+	$Flag.play("Checkpoint")
+	print ("checkpoint")
+	
+#func _physics_process(delta):
+#	$"../Slave".death_pos = position
 		
+func _on_canine_dog_bite():
+	$"../Slave".death_pos = position
+	
+func get_checkpoint_position() -> Vector2:
+	return $"../Slave".death_pos
+

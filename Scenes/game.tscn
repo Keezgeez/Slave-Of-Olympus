@@ -62,7 +62,8 @@ sources/6 = SubResource("TileSetAtlasSource_23uhh")
 sources/7 = SubResource("TileSetAtlasSource_qtg28")
 sources/8 = SubResource("TileSetAtlasSource_m7nbv")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_b4vnu"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hadmf"]
+radius = 42.0119
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11dfx"]
 size = Vector2(80, 30)
@@ -202,12 +203,31 @@ _data = {
 [node name="Game" type="Node2D"]
 position = Vector2(557, -95)
 
+[node name="Checkpoint" parent="." instance=ExtResource("21_ssroo")]
+position = Vector2(1767, 39)
+
+[node name="Checkpoint6" parent="." instance=ExtResource("21_ssroo")]
+position = Vector2(-131, -25)
+
+[node name="Checkpoint2" parent="." instance=ExtResource("21_ssroo")]
+position = Vector2(3807, -536)
+
+[node name="Checkpoint3" parent="." instance=ExtResource("21_ssroo")]
+position = Vector2(5726, -88)
+
+[node name="Checkpoint4" parent="." instance=ExtResource("21_ssroo")]
+position = Vector2(6382, -569)
+
+[node name="Checkpoint5" parent="." instance=ExtResource("21_ssroo")]
+position = Vector2(5439, -985)
+
 [node name="Slave" parent="." instance=ExtResource("1_6844a")]
-position = Vector2(4476, -1085)
+position = Vector2(-145, -77)
 
 [node name="Camera2D" type="Camera2D" parent="Slave"]
 position = Vector2(0, 2)
-limit_bottom = 500
+offset = Vector2(0, -50)
+limit_bottom = 200
 limit_smoothed = true
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -277,6 +297,7 @@ position = Vector2(2600, -189)
 position = Vector2(3021, -20)
 
 [node name="Coin31" parent="." instance=ExtResource("1_n1ae5")]
+visible = false
 position = Vector2(3059, -20)
 
 [node name="Coin33" parent="." instance=ExtResource("1_n1ae5")]
@@ -307,8 +328,8 @@ position = Vector2(2983, -20)
 position = Vector2(-152, -66)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KIllzone"]
-position = Vector2(517, 742)
-shape = SubResource("WorldBoundaryShape2D_b4vnu")
+position = Vector2(239, 1654)
+shape = SubResource("CircleShape2D_hadmf")
 
 [node name="falling_platform2" parent="." instance=ExtResource("10_g8kep")]
 position = Vector2(1328, 79)
@@ -561,14 +582,13 @@ position = Vector2(307, -17)
 
 [node name="Hitpoints" parent="." instance=ExtResource("20_12ydy")]
 
-[node name="Checkpoint" parent="." instance=ExtResource("21_ssroo")]
-position = Vector2(-9, -90)
-
 [node name="Canine" parent="." instance=ExtResource("9_7hhp0")]
-position = Vector2(4567, -914)
+position = Vector2(4987, -928)
+scale = Vector2(2, 2)
 
 [node name="Canine2" parent="." instance=ExtResource("9_7hhp0")]
-position = Vector2(4854, -913)
+position = Vector2(4614, -929)
+scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="Coin3" to="HUD" method="_on_coin_3_body_entered"]
 [connection signal="body_entered" from="Coin4" to="HUD" method="_on_coin_3_body_entered"]

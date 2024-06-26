@@ -1,75 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://bplaekyvrylor"]
+[gd_scene load_steps=4 format=3 uid="uid://bplaekyvrylor"]
 
 [ext_resource type="Script" path="res://Scripts/hitpoints.gd" id="1_ecyco"]
-[ext_resource type="Texture2D" uid="uid://c7bcw061kyh18" path="res://Assets/HitPoints/harthart.png" id="1_xlg5m"]
+[ext_resource type="FontVariation" uid="uid://dmhp6h0g7gnka" path="res://Pixelated.tres" id="3_0n3dy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mpuar"]
-atlas = ExtResource("1_xlg5m")
-region = Rect2(240, 0, 80, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_omfkc"]
-atlas = ExtResource("1_xlg5m")
-region = Rect2(160, 0, 80, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vh3e1"]
-atlas = ExtResource("1_xlg5m")
-region = Rect2(80, 0, 80, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x64eq"]
-atlas = ExtResource("1_xlg5m")
-region = Rect2(0, 64, 80, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_agus5"]
-atlas = ExtResource("1_xlg5m")
-region = Rect2(0, 0, 80, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_slt8x"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mpuar")
-}],
-"loop": true,
-"name": &"1life",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_omfkc")
-}],
-"loop": true,
-"name": &"2lives",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vh3e1")
-}],
-"loop": true,
-"name": &"3lives",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x64eq")
-}],
-"loop": true,
-"name": &"NoLife",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_agus5")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="SpriteFrames" id="SpriteFrames_anij6"]
 
 [node name="Hitpoints" type="CanvasLayer"]
 script = ExtResource("1_ecyco")
 
-[node name="Harthart" type="AnimatedSprite2D" parent="."]
-position = Vector2(39, 34)
-sprite_frames = SubResource("SpriteFrames_slt8x")
-autoplay = "default"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_anij6")
+
+[node name="Heaart" type="Label" parent="."]
+offset_left = 303.0
+offset_top = 14.0
+offset_right = 343.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("3_0n3dy")
+theme_override_font_sizes/font_size = 40

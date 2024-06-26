@@ -5,10 +5,12 @@ const JUMP_VELOCITY = -400.0
 
 var is_jumping = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var death_pos = Vector2 (-145 , -77)
 
 
 
 @onready var slaave = $Slaave
+
 	# Additional logic to reset player state (health, inventory, etc.) if needed
 
 func _physics_process(delta):
@@ -52,6 +54,10 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if position.y > 500:
+		position = death_pos
+		
 
 	move_and_slide()
 
