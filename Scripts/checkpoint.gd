@@ -1,16 +1,19 @@
 extends Node2D
 
-var checkpointPosition =  Vector2(-9, -90)
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.d
-
+signal CheckpointUp
 
 func _on_flags_body_entered(body):
-	if body.has_method("setRespawnPoint"):
-		checkpointPosition = global_position  # Update checkpoint position to current flag position
-		global_position = checkpointPosition
-		body.setRespawnPoint(checkpointPosition)
-		$Flag.play("Checkpoint")
-		print("Respawn point updated to:", checkpointPosition)
+	emit_signal("CheckpointUp")
+	$"../Slave".death_pos = position
+	$Flag.play("Checkpoint")
+	print ("checkpoint")
+	
+#func _physics_process(delta):
+#	$"../Slave".death_pos = position
 		
+func _on_canine_dog_bite():
+	$"../Slave".death_pos = position
+	
+func get_checkpoint_position() -> Vector2:
+	return $"../Slave".death_pos
+

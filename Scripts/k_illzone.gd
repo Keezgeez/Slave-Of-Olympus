@@ -1,19 +1,13 @@
 extends Area2D
 
-var player = null
-var respawnPosition = Vector2(-148, -46)
-
+var death_pos = Vector2.ZERO
 @onready var timer = $Timer
+@onready var slave = $"../Slave"
 
-func _ready():
-	player = $"../Slave"
 
 func _on_body_entered(body):
-	if body == player:
-		print("You Died")
-		respawnPlayer()
-
-func respawnPlayer():
-	player.position = respawnPosition
+	print("You Died")
 	timer.start()
 
+func _on_timer_timeout():
+	get_tree().reload_current_scene()
