@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://2v6qhyyo1nus"]
+[gd_scene load_steps=23 format=3 uid="uid://2v6qhyyo1nus"]
 
 [ext_resource type="Texture2D" uid="uid://bus3xuwmlo0rb" path="res://Assets/InGameBackground/GameBG.png" id="1_21co0"]
 [ext_resource type="Script" path="res://Scenes/tutorial.gd" id="1_fdsrl"]
@@ -66,10 +66,6 @@ sources/2 = SubResource("TileSetAtlasSource_vvgun")
 sources/3 = SubResource("TileSetAtlasSource_qvfy6")
 sources/4 = SubResource("TileSetAtlasSource_nbv5u")
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fps7h"]
-radius = 110.0
-height = 280.0
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bq42l"]
 distance = -808.0
 
@@ -104,9 +100,6 @@ position = Vector2(1029, -44)
 
 [node name="ZeuZ" parent="." instance=ExtResource("12_65oom")]
 position = Vector2(2439, -151)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="ZeuZ"]
-shape = SubResource("CapsuleShape2D_fps7h")
 
 [node name="Slave" parent="." instance=ExtResource("7_2i3b8")]
 position = Vector2(2200, -124)
