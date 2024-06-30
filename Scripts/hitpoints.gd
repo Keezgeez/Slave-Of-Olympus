@@ -13,7 +13,7 @@ signal Died
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#lives = pickups.lives
+	lives = pickups.lives
 	match lives:
 		4:
 			heaaaarts.play("4 hart")
