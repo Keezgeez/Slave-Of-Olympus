@@ -152,7 +152,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Jump",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -192,7 +192,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"JumpRight",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -250,8 +250,7 @@ script = ExtResource("1_lxv1b")
 
 [node name="Slaave" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ky0n8")
-animation = &"JumpRight"
-frame_progress = 0.113764
+animation = &"Jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)

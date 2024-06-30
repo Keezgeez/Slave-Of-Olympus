@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://u8rednxgr1y3"]
+[gd_scene load_steps=13 format=3 uid="uid://u8rednxgr1y3"]
 
+[ext_resource type="Script" path="res://Scenes/zeu_z.gd" id="1_3t66j"]
 [ext_resource type="Texture2D" uid="uid://cagjxuajkw3dh" path="res://Assets/Zeus/FinalZeus.png" id="2_l8qxs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3q44p"]
@@ -76,11 +77,12 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hayfv"]
-radius = 22.0
-height = 106.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_cftfp"]
+radius = 103.044
 
 [node name="ZeuZ" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_3t66j")
 
 [node name="Zeus" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_0qq7b")
@@ -88,4 +90,9 @@ autoplay = "ZeusLeft_1"
 frame_progress = 0.192712
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_hayfv")
+shape = SubResource("CircleShape2D_cftfp")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

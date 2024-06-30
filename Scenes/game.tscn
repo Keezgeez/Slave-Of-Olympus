@@ -1,8 +1,9 @@
-[gd_scene load_steps=40 format=3 uid="uid://bm8dckq2mb1vr"]
+[gd_scene load_steps=47 format=3 uid="uid://bm8dckq2mb1vr"]
 
 [ext_resource type="PackedScene" uid="uid://bk5ts2kw0uv3n" path="res://Scenes/slave.tscn" id="1_6844a"]
 [ext_resource type="PackedScene" uid="uid://cgf0bttuvf7vv" path="res://Scenes/coin.tscn" id="1_n1ae5"]
 [ext_resource type="Texture2D" uid="uid://bnfeam3v2x6ct" path="res://Assets/Blocks/1.png" id="2_co6eg"]
+[ext_resource type="Texture2D" uid="uid://bus3xuwmlo0rb" path="res://Assets/InGameBackground/GameBG.png" id="2_kvnn1"]
 [ext_resource type="Texture2D" uid="uid://cn12nhyeygvja" path="res://Assets/Blocks/2.png" id="3_lhl1v"]
 [ext_resource type="Texture2D" uid="uid://bp5tx2fqnvxpt" path="res://Assets/Blocks/3.png" id="4_4s638"]
 [ext_resource type="Texture2D" uid="uid://ccpvb5lk5ucrc" path="res://Assets/Blocks/4.png" id="5_8g3jq"]
@@ -20,6 +21,32 @@
 [ext_resource type="PackedScene" uid="uid://bplaekyvrylor" path="res://Scenes/hitpoints.tscn" id="20_12ydy"]
 [ext_resource type="PackedScene" uid="uid://4wgs2qpp7ss6" path="res://Scenes/hud.tscn" id="20_rwnhf"]
 [ext_resource type="PackedScene" uid="uid://dujbfx3ykpkm4" path="res://Scenes/checkpoint.tscn" id="21_ssroo"]
+[ext_resource type="PackedScene" uid="uid://u8rednxgr1y3" path="res://Scenes/zeu_z.tscn" id="22_xrb06"]
+[ext_resource type="Texture2D" uid="uid://cj4gqtxan7bbj" path="res://Assets/Blocks/Design.png" id="23_ehde2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cokvm"]
+atlas = ExtResource("23_ehde2")
+region = Rect2(0, 0, 153, 250)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7x2h6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cokvm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gw013"]
+texture = ExtResource("23_ehde2")
+margins = Vector2i(25, 0)
+texture_region_size = Vector2i(32, 32)
+0:0/size_in_atlas = Vector2i(4, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ovi3u"]
 texture = ExtResource("2_co6eg")
@@ -61,9 +88,9 @@ sources/5 = SubResource("TileSetAtlasSource_ovi3u")
 sources/6 = SubResource("TileSetAtlasSource_23uhh")
 sources/7 = SubResource("TileSetAtlasSource_qtg28")
 sources/8 = SubResource("TileSetAtlasSource_m7nbv")
+sources/0 = SubResource("TileSetAtlasSource_gw013")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hadmf"]
-radius = 42.0119
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xph27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11dfx"]
 size = Vector2(80, 30)
@@ -200,11 +227,15 @@ _data = {
 "movedown": SubResource("Animation_r2ooj")
 }
 
-[node name="Game" type="Node2D"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kp1dt"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+
+[node name="Level_1" type="Node2D"]
 position = Vector2(557, -95)
 
 [node name="Checkpoint" parent="." instance=ExtResource("21_ssroo")]
-position = Vector2(1767, 39)
+position = Vector2(1740, 40)
 
 [node name="Checkpoint6" parent="." instance=ExtResource("21_ssroo")]
 position = Vector2(-131, -25)
@@ -218,6 +249,41 @@ position = Vector2(5726, -88)
 [node name="Checkpoint4" parent="." instance=ExtResource("21_ssroo")]
 position = Vector2(6382, -569)
 
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
+position = Vector2(915, -113)
+scale = Vector2(0.65, 1)
+sprite_frames = SubResource("SpriteFrames_7x2h6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(340, -50)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_7x2h6")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(587, -50)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_7x2h6")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(618, -51)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_7x2h6")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(657, -51)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_7x2h6")
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
+position = Vector2(693, -50)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_7x2h6")
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
+position = Vector2(731, -50)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_7x2h6")
+
 [node name="Checkpoint5" parent="." instance=ExtResource("21_ssroo")]
 position = Vector2(5439, -985)
 
@@ -229,6 +295,20 @@ position = Vector2(0, 2)
 offset = Vector2(0, -50)
 limit_bottom = 200
 limit_smoothed = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Slave/Camera2D"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Slave/Camera2D/ParallaxBackground"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(311, 546)
+motion_mirroring = Vector2(6, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Slave/Camera2D/ParallaxBackground/ParallaxLayer"]
+position = Vector2(952.5, -929.5)
+scale = Vector2(6.14107, 5.98315)
+texture = ExtResource("2_kvnn1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, -1)
@@ -328,8 +408,8 @@ position = Vector2(2983, -20)
 position = Vector2(-152, -66)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KIllzone"]
-position = Vector2(239, 1654)
-shape = SubResource("CircleShape2D_hadmf")
+position = Vector2(89, 838)
+shape = SubResource("WorldBoundaryShape2D_xph27")
 
 [node name="falling_platform2" parent="." instance=ExtResource("10_g8kep")]
 position = Vector2(1328, 79)
@@ -580,8 +660,6 @@ position = Vector2(269, -17)
 [node name="Coin15" parent="." instance=ExtResource("1_n1ae5")]
 position = Vector2(307, -17)
 
-[node name="Hitpoints" parent="." instance=ExtResource("20_12ydy")]
-
 [node name="Canine" parent="." instance=ExtResource("9_7hhp0")]
 position = Vector2(4987, -928)
 scale = Vector2(2, 2)
@@ -589,6 +667,16 @@ scale = Vector2(2, 2)
 [node name="Canine2" parent="." instance=ExtResource("9_7hhp0")]
 position = Vector2(4614, -929)
 scale = Vector2(2, 2)
+
+[node name="Hitpoints" parent="." instance=ExtResource("20_12ydy")]
+
+[node name="ZeuZ" parent="." instance=ExtResource("22_xrb06")]
+position = Vector2(358, -254)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(659, -347)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_kp1dt")
 
 [connection signal="body_entered" from="Coin3" to="HUD" method="_on_coin_3_body_entered"]
 [connection signal="body_entered" from="Coin4" to="HUD" method="_on_coin_3_body_entered"]
@@ -619,7 +707,6 @@ scale = Vector2(2, 2)
 [connection signal="body_entered" from="Coin43" to="HUD" method="_on_coin_3_body_entered"]
 [connection signal="body_entered" from="Coin45" to="HUD" method="_on_coin_3_body_entered"]
 [connection signal="body_entered" from="Coin46" to="HUD" method="_on_coin_3_body_entered"]
-[connection signal="body_entered" from="KIllzone" to="Hitpoints" method="_on_k_illzone_body_entered"]
 [connection signal="body_entered" from="Coin5" to="HUD" method="_on_coin_3_body_entered"]
 [connection signal="body_entered" from="Coin7" to="HUD" method="_on_coin_3_body_entered"]
 [connection signal="body_entered" from="Coin9" to="HUD" method="_on_coin_3_body_entered"]

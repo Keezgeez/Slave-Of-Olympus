@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://2v6qhyyo1nus"]
+[gd_scene load_steps=24 format=3 uid="uid://2v6qhyyo1nus"]
 
 [ext_resource type="Texture2D" uid="uid://bus3xuwmlo0rb" path="res://Assets/InGameBackground/GameBG.png" id="1_21co0"]
+[ext_resource type="Script" path="res://Scenes/tutorial.gd" id="1_fdsrl"]
 [ext_resource type="Texture2D" uid="uid://bnfeam3v2x6ct" path="res://Assets/Blocks/1.png" id="2_gabru"]
 [ext_resource type="Texture2D" uid="uid://cn12nhyeygvja" path="res://Assets/Blocks/2.png" id="3_xipn5"]
 [ext_resource type="Texture2D" uid="uid://bp5tx2fqnvxpt" path="res://Assets/Blocks/3.png" id="4_kg0sh"]
@@ -65,10 +66,15 @@ sources/2 = SubResource("TileSetAtlasSource_vvgun")
 sources/3 = SubResource("TileSetAtlasSource_qvfy6")
 sources/4 = SubResource("TileSetAtlasSource_nbv5u")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fps7h"]
+radius = 110.0
+height = 280.0
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bq42l"]
 distance = -808.0
 
 [node name="Tutorial" type="Node2D"]
+script = ExtResource("1_fdsrl")
 
 [node name="ColorRect6" type="ColorRect" parent="."]
 offset_left = -3554.0
@@ -96,8 +102,14 @@ position = Vector2(192, 52)
 [node name="Checkpoint2" parent="." instance=ExtResource("14_8gwn1")]
 position = Vector2(1029, -44)
 
+[node name="ZeuZ" parent="." instance=ExtResource("12_65oom")]
+position = Vector2(2439, -151)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ZeuZ"]
+shape = SubResource("CapsuleShape2D_fps7h")
+
 [node name="Slave" parent="." instance=ExtResource("7_2i3b8")]
-position = Vector2(181, -12)
+position = Vector2(2200, -124)
 
 [node name="Camera2D" type="Camera2D" parent="Slave"]
 
@@ -196,6 +208,7 @@ offset_bottom = 188.0
 color = Color(0, 0, 0, 0.498039)
 
 [node name="LightningCoins2" type="Label" parent="ColorRect8"]
+layout_mode = 0
 offset_left = 19.0
 offset_top = 12.0
 offset_right = 461.0
@@ -242,6 +255,7 @@ offset_bottom = -110.0
 color = Color(0, 0, 0, 0.498039)
 
 [node name="Canine2nd" type="Label" parent="ColorRect7"]
+layout_mode = 0
 offset_left = 52.0
 offset_top = 19.0
 offset_right = 419.0
@@ -314,11 +328,11 @@ position = Vector2(1724, -4)
 position = Vector2(1145, 12)
 scale = Vector2(2, 2)
 
-[node name="ZeuZ" parent="." instance=ExtResource("12_65oom")]
-position = Vector2(2439, -151)
-
 [node name="Killzone" parent="." instance=ExtResource("13_eyv3w")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(1518, -260)
 shape = SubResource("WorldBoundaryShape2D_bq42l")
+
+[connection signal="area_entered" from="ZeuZ" to="." method="_on_zeu_z_area_entered"]
+[connection signal="area_exited" from="ZeuZ" to="." method="_on_zeu_z_area_exited"]
