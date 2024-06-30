@@ -18,12 +18,12 @@
 [ext_resource type="Script" path="res://Scripts/fifthMovingPlatform.gd" id="16_ucaja"]
 [ext_resource type="Script" path="res://Scripts/sixthMovingPlatform.gd" id="17_jwtfm"]
 [ext_resource type="Script" path="res://Scripts/seventhMovingPlatform.gd" id="18_15r15"]
-[ext_resource type="PackedScene" uid="uid://bplaekyvrylor" path="res://Scenes/hitpoints.tscn" id="20_12ydy"]
+[ext_resource type="PackedScene" uid="uid://c8j8seugnm1vc" path="res://Scenes/hitpoints.tscn" id="20_12ydy"]
 [ext_resource type="PackedScene" uid="uid://4wgs2qpp7ss6" path="res://Scenes/hud.tscn" id="20_rwnhf"]
 [ext_resource type="PackedScene" uid="uid://dujbfx3ykpkm4" path="res://Scenes/checkpoint.tscn" id="21_ssroo"]
 [ext_resource type="PackedScene" uid="uid://u8rednxgr1y3" path="res://Scenes/zeu_z.tscn" id="22_xrb06"]
 [ext_resource type="Texture2D" uid="uid://cj4gqtxan7bbj" path="res://Assets/Blocks/Design.png" id="23_ehde2"]
-[ext_resource type="PackedScene" uid="uid://dasuu2fkva5b0" path="res://Scenes/heart_pickups.tscn" id="24_x0t1p"]
+[ext_resource type="PackedScene" uid="uid://os4ghk4whi15" path="res://Scenes/heart_pickups.tscn" id="24_x0t1p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cokvm"]
 atlas = ExtResource("23_ehde2")
@@ -257,31 +257,6 @@ sprite_frames = SubResource("SpriteFrames_7x2h6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(340, -50)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_7x2h6")
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
-position = Vector2(587, -50)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_7x2h6")
-
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-position = Vector2(618, -51)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_7x2h6")
-
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
-position = Vector2(657, -51)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_7x2h6")
-
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="."]
-position = Vector2(693, -50)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_7x2h6")
-
-[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="."]
-position = Vector2(731, -50)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_7x2h6")
 
@@ -680,9 +655,10 @@ amount = 50
 process_material = SubResource("ParticleProcessMaterial_kp1dt")
 
 [node name="heartPickups" parent="." instance=ExtResource("24_x0t1p")]
-position = Vector2(639, -17)
+position = Vector2(-17.9999, -81)
 scale = Vector2(0.289324, 0.260114)
 
+[connection signal="Fall" from="Slave" to="Hitpoints" method="_on_slave_fall"]
 [connection signal="body_entered" from="Coin3" to="HUD" method="_on_coin_3_body_entered"]
 [connection signal="body_entered" from="Coin4" to="HUD" method="_on_coin_3_body_entered"]
 [connection signal="body_entered" from="Coin6" to="HUD" method="_on_coin_3_body_entered"]
@@ -718,3 +694,4 @@ scale = Vector2(0.289324, 0.260114)
 [connection signal="body_entered" from="Coin11" to="HUD" method="_on_coin_3_body_entered"]
 [connection signal="body_entered" from="Coin13" to="HUD" method="_on_coin_3_body_entered"]
 [connection signal="body_entered" from="Coin15" to="HUD" method="_on_coin_3_body_entered"]
+[connection signal="addHeart" from="heartPickups" to="Hitpoints" method="_on_heart_pickups_add_heart"]

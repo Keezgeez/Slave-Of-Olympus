@@ -6,8 +6,7 @@ const JUMP_VELOCITY = -400.0
 var is_jumping = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var death_pos = Vector2 (-145 , -77)
-signal Died
-
+signal Fall
 
 
 @onready var slaave = $Slaave
@@ -51,7 +50,7 @@ func _physics_process(delta):
 		
 	if position.y > 500:
 		position = death_pos
-		emit_signal("Died")
+		emit_signal("Fall")
 		
 		
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://2v6qhyyo1nus"]
+[gd_scene load_steps=24 format=3 uid="uid://2v6qhyyo1nus"]
 
 [ext_resource type="Texture2D" uid="uid://bus3xuwmlo0rb" path="res://Assets/InGameBackground/GameBG.png" id="1_21co0"]
 [ext_resource type="Script" path="res://Scenes/tutorial.gd" id="1_fdsrl"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://u8rednxgr1y3" path="res://Scenes/zeu_z.tscn" id="12_65oom"]
 [ext_resource type="PackedScene" uid="uid://ds4g2alyym1nv" path="res://Scenes/k_illzone.tscn" id="13_eyv3w"]
 [ext_resource type="PackedScene" uid="uid://dujbfx3ykpkm4" path="res://Scenes/checkpoint.tscn" id="14_8gwn1"]
+[ext_resource type="PackedScene" uid="uid://4wgs2qpp7ss6" path="res://Scenes/hud.tscn" id="16_yy8jh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ttem"]
 texture = ExtResource("2_gabru")
@@ -326,6 +327,8 @@ scale = Vector2(2, 2)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 position = Vector2(1518, -260)
 shape = SubResource("WorldBoundaryShape2D_bq42l")
+
+[node name="HUD" parent="." instance=ExtResource("16_yy8jh")]
 
 [connection signal="area_entered" from="ZeuZ" to="." method="_on_zeu_z_area_entered"]
 [connection signal="area_exited" from="ZeuZ" to="." method="_on_zeu_z_area_exited"]

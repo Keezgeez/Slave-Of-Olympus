@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bplaekyvrylor"]
+[gd_scene load_steps=10 format=3 uid="uid://c8j8seugnm1vc"]
 
 [ext_resource type="Script" path="res://Scripts/hitpoints.gd" id="1_ecyco"]
 [ext_resource type="Texture2D" uid="uid://c2r874ddvbegl" path="res://Assets/HitPoints/FinalHeart.png" id="2_t4ex7"]
@@ -14,6 +14,10 @@ corner_radius_bottom_left = 20
 atlas = ExtResource("2_t4ex7")
 region = Rect2(0, 204, 347, 68)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_atq1q"]
+atlas = ExtResource("2_t4ex7")
+region = Rect2(0, 136, 347, 68)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4q7ns"]
 atlas = ExtResource("2_t4ex7")
 region = Rect2(0, 68, 347, 68)
@@ -26,10 +30,6 @@ region = Rect2(0, 0, 347, 68)
 atlas = ExtResource("2_t4ex7")
 region = Rect2(0, 272, 347, 68)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_atq1q"]
-atlas = ExtResource("2_t4ex7")
-region = Rect2(0, 136, 347, 68)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_anij6"]
 animations = [{
 "frames": [{
@@ -38,6 +38,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"1_hart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atq1q")
+}],
+"loop": true,
+"name": &"2_hart",
 "speed": 5.0
 }, {
 "frames": [{
@@ -63,14 +71,6 @@ animations = [{
 "loop": true,
 "name": &"No_hart",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_atq1q")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
 }]
 
 [node name="Hitpoints" type="CanvasLayer"]
@@ -84,6 +84,6 @@ offset_bottom = 84.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_njf1g")
 
 [node name="Heaaaarts" type="AnimatedSprite2D" parent="."]
-position = Vector2(187.5, 45)
+position = Vector2(187.5, 44)
 sprite_frames = SubResource("SpriteFrames_anij6")
-animation = &"1_hart"
+animation = &"2_hart"

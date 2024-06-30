@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dasuu2fkva5b0"]
+[gd_scene load_steps=10 format=3 uid="uid://os4ghk4whi15"]
 
 [ext_resource type="Script" path="res://heartPickups.gd" id="1_31pj8"]
 [ext_resource type="Texture2D" uid="uid://c2r874ddvbegl" path="res://Assets/HitPoints/FinalHeart.png" id="2_eafii"]
-[ext_resource type="PackedScene" uid="uid://bplaekyvrylor" path="res://Scenes/hitpoints.tscn" id="3_ria8f"]
+[ext_resource type="PackedScene" uid="uid://c8j8seugnm1vc" path="res://Scenes/hitpoints.tscn" id="3_ria8f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_va0cp"]
 atlas = ExtResource("2_eafii")
