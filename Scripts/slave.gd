@@ -58,6 +58,9 @@ func _physics_process(delta):
 	if position.y > 500:
 		position = death_pos
 		
+		
+		
+		
 
 	move_and_slide()
 
