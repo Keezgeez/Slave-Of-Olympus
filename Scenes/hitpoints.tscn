@@ -37,7 +37,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_dl88w")
 }],
 "loop": true,
-"name": &"1 hart",
+"name": &"1_hart",
 "speed": 5.0
 }, {
 "frames": [{
@@ -45,7 +45,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4q7ns")
 }],
 "loop": true,
-"name": &"3 hart",
+"name": &"3_hart",
 "speed": 5.0
 }, {
 "frames": [{
@@ -53,7 +53,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_jcanh")
 }],
 "loop": true,
-"name": &"4 hart",
+"name": &"4_hart",
 "speed": 5.0
 }, {
 "frames": [{
@@ -61,7 +61,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_bp8hs")
 }],
 "loop": true,
-"name": &"No hart",
+"name": &"No_hart",
 "speed": 5.0
 }, {
 "frames": [{
@@ -86,3 +86,4 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_njf1g")
 [node name="Heaaaarts" type="AnimatedSprite2D" parent="."]
 position = Vector2(187.5, 45)
 sprite_frames = SubResource("SpriteFrames_anij6")
+animation = &"1_hart"

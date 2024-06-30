@@ -1,17 +1,19 @@
 extends CanvasLayer
 
-var lives = 1
+var lives = 3
+
 signal Died
-@onready var slaave = $Slaave
+@onready var slaave = $Slave
 @onready var heaaaarts = $Heaaaarts
 @onready var killzone = $"."
+@onready var pickups = $heartPickups
+
+
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	updateHearts
-
-func updateHearts():
+	#lives = pickups.lives
 	match lives:
 		4:
 			heaaaarts.play("4 hart")
@@ -23,8 +25,11 @@ func updateHearts():
 			heaaaarts.play("1 hart")
 		0:
 			heaaaarts.play("No hart")
-	$Heaart.text = (": ") + str(lives)
-	print (lives)
+	#$Heaart.text = (": ") + str(lives)
+	#print (lives)
+
+#func updateHearts():
+	
 
 
 func _on_k_illzone_body_entered(body):
@@ -32,7 +37,7 @@ func _on_k_illzone_body_entered(body):
 	print ("-1 life")
 	if lives <= 0:
 		emit_signal("Died")
-	else:
-		updateHearts()
+	#else:
+	#	updateHearts()
 	
 	
