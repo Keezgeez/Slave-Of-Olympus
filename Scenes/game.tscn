@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://4wgs2qpp7ss6" path="res://Scenes/hud.tscn" id="20_rwnhf"]
 [ext_resource type="PackedScene" uid="uid://dujbfx3ykpkm4" path="res://Scenes/checkpoint.tscn" id="21_ssroo"]
 [ext_resource type="Texture2D" uid="uid://cj4gqtxan7bbj" path="res://Assets/Blocks/Design.png" id="23_ehde2"]
-[ext_resource type="PackedScene" uid="uid://dfyc06yulx50r" path="res://Scenes/zeus_tut.tscn" id="24_2nctg"]
+[ext_resource type="PackedScene" path="res://Scenes/zeus_tut.tscn" id="24_2nctg"]
 [ext_resource type="PackedScene" uid="uid://os4ghk4whi15" path="res://Scenes/heart_pickups.tscn" id="24_x0t1p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cokvm"]
