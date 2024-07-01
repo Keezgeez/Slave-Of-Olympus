@@ -5,11 +5,11 @@ var death_pos = Vector2.ZERO
 @onready var slave = $"../Slave"
 @onready var checkpoint = $"."
 
-signal Died
+signal Killed
 
 
 func _on_body_entered(body):
-	emit_signal("Died")
+	emit_signal("Killed")
 	print("You Died")
 	timer.start()
 

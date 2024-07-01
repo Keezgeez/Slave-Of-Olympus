@@ -82,7 +82,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Bite",
-"speed": 15.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -121,6 +121,7 @@ script = ExtResource("1_37v7c")
 
 [node name="CanineEnemy" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gqc7q")
+animation = &"Bite"
 autoplay = "default"
 
 [node name="Killzone" parent="." instance=ExtResource("2_fh4dy")]

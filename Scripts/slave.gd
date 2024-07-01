@@ -56,3 +56,11 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+
+
+func _on_killzone_check_p():
+	position = death_pos
+
+
+func _on_canine_2_bite():
+	get_tree().reload_current_scene()

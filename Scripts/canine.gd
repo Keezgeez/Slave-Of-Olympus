@@ -4,7 +4,7 @@ const SPEED = 60
 
 var direction = 1
 
-
+signal Bitebite
 @onready var ray_cast_right = $RayCastRight
 @onready var ray_cast_left = $RayCastLeft
 @onready var canine_enemy = $CanineEnemy
@@ -26,4 +26,5 @@ func _process(delta):
 
 func _on_killzone_body_entered(body):
 	canine_enemy.play("Bite")
+	emit_signal("Bitebite")
 	print ("bitebite")

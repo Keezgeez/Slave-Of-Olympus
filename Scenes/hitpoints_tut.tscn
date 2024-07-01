@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://clgnp3bf81gxd"]
+
+[ext_resource type="Texture2D" uid="uid://c2r874ddvbegl" path="res://Assets/HitPoints/FinalHeart.png" id="1_h8yg1"]
+[ext_resource type="Script" path="res://Scenes/hitpoints_tut.gd" id="1_sgsqw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3neer"]
+atlas = ExtResource("1_h8yg1")
+region = Rect2(0, 204, 347, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tipq2"]
+atlas = ExtResource("1_h8yg1")
+region = Rect2(0, 136, 347, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1icv0"]
+atlas = ExtResource("1_h8yg1")
+region = Rect2(0, 68, 347, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwlpr"]
+atlas = ExtResource("1_h8yg1")
+region = Rect2(0, 0, 347, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rx4kj"]
+atlas = ExtResource("1_h8yg1")
+region = Rect2(0, 272, 347, 68)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_68ac3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3neer")
+}],
+"loop": true,
+"name": &"1_hart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tipq2")
+}],
+"loop": true,
+"name": &"2_hart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1icv0")
+}],
+"loop": true,
+"name": &"3_hart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwlpr")
+}],
+"loop": true,
+"name": &"4_hart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rx4kj")
+}],
+"loop": true,
+"name": &"No_hart",
+"speed": 5.0
+}]
+
+[node name="HitpointsTut" type="CanvasLayer"]
+script = ExtResource("1_sgsqw")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 342.0
+offset_bottom = 79.0
+
+[node name="HeartsTut" type="AnimatedSprite2D" parent="."]
+position = Vector2(174, 37)
+sprite_frames = SubResource("SpriteFrames_68ac3")
+animation = &"No_hart"
