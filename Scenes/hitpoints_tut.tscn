@@ -1,7 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://clgnp3bf81gxd"]
+[gd_scene load_steps=10 format=3 uid="uid://clgnp3bf81gxd"]
 
 [ext_resource type="Texture2D" uid="uid://c2r874ddvbegl" path="res://Assets/HitPoints/FinalHeart.png" id="1_h8yg1"]
 [ext_resource type="Script" path="res://Scenes/hitpoints_tut.gd" id="1_sgsqw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1leg"]
+bg_color = Color(1, 0.486275, 0.419608, 0.392157)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3neer"]
 atlas = ExtResource("1_h8yg1")
@@ -72,6 +75,7 @@ script = ExtResource("1_sgsqw")
 [node name="Panel" type="Panel" parent="."]
 offset_right = 342.0
 offset_bottom = 79.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q1leg")
 
 [node name="HeartsTut" type="AnimatedSprite2D" parent="."]
 position = Vector2(174, 37)

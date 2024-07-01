@@ -5,7 +5,7 @@
 [ext_resource type="FontVariation" uid="uid://dmhp6h0g7gnka" path="res://Pixelated.tres" id="2_j16yl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3dfo"]
-bg_color = Color(0, 0, 0, 0.392157)
+bg_color = Color(1, 0.768627, 0.505882, 0.392157)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20

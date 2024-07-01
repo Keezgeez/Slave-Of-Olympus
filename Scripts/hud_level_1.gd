@@ -11,6 +11,6 @@ func _process(delta):
 	pass
 
 
-func _on_coin_3_body_entered(body):
+func _on_coin_body_entered(body):
 	coinscoillected = coinscoillected + 1
 	$CoinCount.text = ": " + str (coinscoillected)

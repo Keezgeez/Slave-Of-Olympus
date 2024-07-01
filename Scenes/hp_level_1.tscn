@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://ca0cak2lncfvu"]
+
+[ext_resource type="Script" path="res://Scenes/hp_level_1.gd" id="1_jbyx6"]
+[ext_resource type="Texture2D" uid="uid://c2r874ddvbegl" path="res://Assets/HitPoints/FinalHeart.png" id="1_lw8p1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew2c2"]
+bg_color = Color(1, 0.486104, 0.418607, 0.392157)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi0pq"]
+atlas = ExtResource("1_lw8p1")
+region = Rect2(0, 204, 347, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqqfw"]
+atlas = ExtResource("1_lw8p1")
+region = Rect2(0, 136, 347, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5umcj"]
+atlas = ExtResource("1_lw8p1")
+region = Rect2(0, 68, 347, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eofc7"]
+atlas = ExtResource("1_lw8p1")
+region = Rect2(0, 0, 347, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01f7r"]
+atlas = ExtResource("1_lw8p1")
+region = Rect2(0, 272, 347, 68)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gd06a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pi0pq")
+}],
+"loop": true,
+"name": &"1_hart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqqfw")
+}],
+"loop": true,
+"name": &"2_hart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5umcj")
+}],
+"loop": true,
+"name": &"3_hart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eofc7")
+}],
+"loop": true,
+"name": &"4_hart",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01f7r")
+}],
+"loop": true,
+"name": &"No_hart",
+"speed": 5.0
+}]
+
+[node name="HP_Level1" type="CanvasLayer"]
+script = ExtResource("1_jbyx6")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 356.0
+offset_bottom = 86.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ew2c2")
+
+[node name="HP_Level1" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(184, 44)
+sprite_frames = SubResource("SpriteFrames_gd06a")
+animation = &"No_hart"

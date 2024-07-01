@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c2r874ddvbegl" path="res://Assets/HitPoints/FinalHeart.png" id="2_t4ex7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njf1g"]
-bg_color = Color(0, 0, 0, 0.392157)
+bg_color = Color(1, 0.486275, 0.419608, 0.392157)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
