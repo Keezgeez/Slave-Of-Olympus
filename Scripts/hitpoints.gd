@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var lives = 1
+var lives = 3
 
 signal Died
 @onready var slaave = $Slave
@@ -10,7 +10,7 @@ signal Died
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	lives = 1
+	lives = 3
 
 func _process(_delta):
 	_updateLife()

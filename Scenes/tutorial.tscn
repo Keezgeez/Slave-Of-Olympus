@@ -85,56 +85,59 @@ offset_bottom = -1456.0
 scale = Vector2(61.3432, 40.5051)
 color = Color(1, 0.701961, 0.560784, 0.227451)
 
-[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834436" type="Sprite2D" parent="."]
-position = Vector2(-532, -214)
+[node name="Node2DngBG" type="Node2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834436" type="Sprite2D" parent="Node2DngBG"]
+position = Vector2(-532, -213)
 texture = ExtResource("11_kurxm")
 
-[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834440" type="Sprite2D" parent="."]
-position = Vector2(-1492, -214)
+[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834440" type="Sprite2D" parent="Node2DngBG"]
+position = Vector2(-1492, -213)
 texture = ExtResource("11_kurxm")
 
-[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834441" type="Sprite2D" parent="."]
-position = Vector2(-1492, 424)
+[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834441" type="Sprite2D" parent="Node2DngBG"]
+position = Vector2(-1492, 425)
 texture = ExtResource("11_kurxm")
 
-[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834442" type="Sprite2D" parent="."]
-position = Vector2(-1492, 489)
+[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834442" type="Sprite2D" parent="Node2DngBG"]
+position = Vector2(-1492, 490)
 texture = ExtResource("11_kurxm")
 
-[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834437" type="Sprite2D" parent="."]
-position = Vector2(743, -214)
+[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834437" type="Sprite2D" parent="Node2DngBG"]
+position = Vector2(743, -213)
 texture = ExtResource("11_kurxm")
 
-[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834448" type="Sprite2D" parent="."]
-position = Vector2(742, -853)
+[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834448" type="Sprite2D" parent="Node2DngBG"]
+position = Vector2(742, -852)
 texture = ExtResource("11_kurxm")
 
-[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834438" type="Sprite2D" parent="."]
-position = Vector2(2023, -214)
+[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834438" type="Sprite2D" parent="Node2DngBG"]
+position = Vector2(2023, -213)
 texture = ExtResource("11_kurxm")
 
-[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834443" type="Sprite2D" parent="."]
-position = Vector2(2022, -853)
+[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834443" type="Sprite2D" parent="Node2DngBG"]
+position = Vector2(2022, -852)
 texture = ExtResource("11_kurxm")
 
-[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834444" type="Sprite2D" parent="."]
-position = Vector2(3271, -217)
+[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834444" type="Sprite2D" parent="Node2DngBG"]
+position = Vector2(3271, -216)
 texture = ExtResource("11_kurxm")
 
-[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834445" type="Sprite2D" parent="."]
-position = Vector2(3273, -848)
+[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834445" type="Sprite2D" parent="Node2DngBG"]
+position = Vector2(3273, -847)
 texture = ExtResource("11_kurxm")
 
-[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834446" type="Sprite2D" parent="."]
-position = Vector2(3271, 424)
+[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834446" type="Sprite2D" parent="Node2DngBG"]
+position = Vector2(3271, 425)
 texture = ExtResource("11_kurxm")
 
-[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834447" type="Sprite2D" parent="."]
-position = Vector2(3270, 487)
+[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834447" type="Sprite2D" parent="Node2DngBG"]
+position = Vector2(3270, 488)
 texture = ExtResource("11_kurxm")
 
-[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834439" type="Sprite2D" parent="."]
-position = Vector2(2023, 456)
+[node name="Pngtree-pixel-art-background-vector-illustration-modern-pattern-color-vector-png-image47834439" type="Sprite2D" parent="Node2DngBG"]
+position = Vector2(2023, 457)
 scale = Vector2(1, 1.10312)
 texture = ExtResource("11_kurxm")
 
@@ -164,88 +167,90 @@ position = Vector2(-1101, 30)
 
 [node name="Camera2D" type="Camera2D" parent="Slave"]
 
-[node name="Coin" parent="." instance=ExtResource("8_cttqj")]
+[node name="Node2DCoins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(145, 62)
 
-[node name="Coin2" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin2" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(124, 62)
 
-[node name="Coin3" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin3" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(103, 62)
 
-[node name="Coin4" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin4" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(82, 62)
 
-[node name="Coin6" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin6" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(166, 62)
 
-[node name="Coin7" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin7" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(187, 62)
 
-[node name="Coin8" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin8" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(208, 62)
 
-[node name="Coin9" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin9" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(229, 62)
 
-[node name="Coin10" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin10" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(250, 62)
 
-[node name="Coin11" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin11" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(271, 62)
 
-[node name="Coin12" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin12" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(292, 62)
 
-[node name="Coin13" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin13" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(313, 62)
 
-[node name="Coin14" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin14" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(334, 62)
 
-[node name="Coin15" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin15" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(355, 62)
 
-[node name="Coin16" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin16" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(376, 62)
 
-[node name="Coin17" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin17" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(397, 62)
 
-[node name="Coin18" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin18" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(418, 62)
 
-[node name="Coin19" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin19" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(439, 62)
 
-[node name="Coin20" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin20" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(460, 62)
 
-[node name="Coin21" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin21" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(481, 62)
 
-[node name="Coin22" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin22" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(502, 62)
 
-[node name="Coin23" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin23" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(523, 62)
 
-[node name="Coin24" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin24" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(544, 62)
 
-[node name="Coin25" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin25" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(565, 62)
 
-[node name="Coin26" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin26" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(586, 62)
 
-[node name="Coin27" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin27" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(607, 62)
 
-[node name="Coin28" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin28" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(628, 62)
 
-[node name="Coin29" parent="." instance=ExtResource("8_cttqj")]
+[node name="Coin29" parent="Node2DCoins" instance=ExtResource("8_cttqj")]
 position = Vector2(649, 62)
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -417,33 +422,33 @@ scale = Vector2(0.26, 0.26)
 [connection signal="area_entered" from="ZeuZ" to="." method="_on_zeu_z_area_entered"]
 [connection signal="area_exited" from="ZeuZ" to="." method="_on_zeu_z_area_exited"]
 [connection signal="Fall" from="Slave" to="HitpointsTut" method="_on_slave_fall"]
-[connection signal="body_entered" from="Coin" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin2" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin3" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin4" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin6" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin7" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin8" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin9" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin10" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin11" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin12" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin13" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin14" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin15" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin16" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin17" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin18" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin19" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin20" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin21" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin22" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin23" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin24" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin25" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin26" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin27" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin28" to="HUD_Tut" method="_on_coin_body_entered"]
-[connection signal="body_entered" from="Coin29" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin2" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin3" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin4" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin6" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin7" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin8" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin9" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin10" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin11" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin12" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin13" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin14" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin15" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin16" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin17" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin18" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin19" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin20" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin21" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin22" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin23" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin24" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin25" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin26" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin27" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin28" to="HUD_Tut" method="_on_coin_body_entered"]
+[connection signal="body_entered" from="Node2DCoins/Coin29" to="HUD_Tut" method="_on_coin_body_entered"]
 [connection signal="body_entered" from="Killzone" to="HitpointsTut" method="_on_killzone_body_entered"]
 [connection signal="addHeart" from="heartPickups" to="HitpointsTut" method="_on_heart_pickups_add_heart"]
