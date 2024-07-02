@@ -84,6 +84,6 @@ offset_bottom = 84.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_njf1g")
 
 [node name="Heaaaarts" type="AnimatedSprite2D" parent="."]
-position = Vector2(187.5, 44)
+position = Vector2(187.5, 48)
 sprite_frames = SubResource("SpriteFrames_anij6")
 animation = &"2_hart"

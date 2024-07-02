@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://d34r7pt50vy11"]
+
+[ext_resource type="Texture2D" uid="uid://bumd5umxyolnu" path="res://Assets/Coin/LightningCoin.png" id="1_ia6bk"]
+[ext_resource type="Script" path="res://Scenes/hud_level_3.gd" id="1_qrlyt"]
+[ext_resource type="FontVariation" uid="uid://dmhp6h0g7gnka" path="res://Pixelated.tres" id="2_j4xa3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a7l1c"]
+bg_color = Color(1, 0.768627, 0.505882, 0.392157)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds1al"]
+atlas = ExtResource("1_ia6bk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5ghq"]
+atlas = ExtResource("1_ia6bk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq6mn"]
+atlas = ExtResource("1_ia6bk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq3e6"]
+atlas = ExtResource("1_ia6bk")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02p2s"]
+atlas = ExtResource("1_ia6bk")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0il81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ds1al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5ghq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq6mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq3e6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02p2s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="HUD_Level3" type="CanvasLayer"]
+script = ExtResource("1_qrlyt")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 11.0
+offset_top = 132.0
+offset_right = 104.0
+offset_bottom = 166.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a7l1c")
+
+[node name="CoinCount" type="Label" parent="."]
+offset_left = 50.0
+offset_top = 138.0
+offset_right = 90.0
+offset_bottom = 161.0
+theme_override_fonts/font = ExtResource("2_j4xa3")
+theme_override_font_sizes/font_size = 20
+
+[node name="Coinc" type="AnimatedSprite2D" parent="."]
+position = Vector2(30, 149)
+sprite_frames = SubResource("SpriteFrames_0il81")
