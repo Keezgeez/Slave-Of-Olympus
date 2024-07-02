@@ -1,0 +1,271 @@
+[gd_scene load_steps=19 format=3 uid="uid://ckixnxm5187ce"]
+
+[ext_resource type="Script" path="res://PLATFORM_STAGE3.gd" id="1_afjmr"]
+[ext_resource type="Texture2D" uid="uid://d2bh6qxq8f8gs" path="res://Assets/Blocks/falling platform_3.png" id="1_dky8b"]
+[ext_resource type="Script" path="res://AnimationTree.gd" id="2_stiqc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsv2m"]
+size = Vector2(16.3146, 14.4828)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_be8kf"]
+size = Vector2(16, 0.75)
+
+[sub_resource type="Animation" id="Animation_w51f0"]
+resource_name = "Falling"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FallingPlatform3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 3.13834, 1),
+"update": 0,
+"values": [Vector2(0, -1), Vector2(-1, -1), Vector2(1, -1), Vector2(-1, -1), Vector2(1, -1), Vector2(-1, -1), Vector2(1, -1), Vector2(0, -1), Vector2(0, 71)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FallingPlatform3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_kak3e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FallingPlatform3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FallingPlatform3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ip8j8"]
+resource_name = "Regenerate"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FallingPlatform3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(3.13834, 0.757858),
+"update": 0,
+"values": [Vector2(0, -5), Vector2(0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FallingPlatform3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"back_to_static"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ikusq"]
+resource_name = "Static"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FallingPlatform3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Area2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4fas3"]
+_data = {
+"Falling": SubResource("Animation_w51f0"),
+"RESET": SubResource("Animation_kak3e"),
+"Regenerate": SubResource("Animation_ip8j8"),
+"Static": SubResource("Animation_ikusq")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_diyqi"]
+animation = &"Falling"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_58mni"]
+animation = &"Regenerate"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_stu3i"]
+animation = &"Static"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dtwsy"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_btumj"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mnd73"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tebpo"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_1ilyt"]
+states/Falling/node = SubResource("AnimationNodeAnimation_diyqi")
+states/Falling/position = Vector2(505, 43)
+states/Regenerate/node = SubResource("AnimationNodeAnimation_58mni")
+states/Regenerate/position = Vector2(614, 129)
+states/Static/node = SubResource("AnimationNodeAnimation_stu3i")
+states/Static/position = Vector2(423, 129)
+transitions = ["Falling", "Regenerate", SubResource("AnimationNodeStateMachineTransition_dtwsy"), "Regenerate", "Static", SubResource("AnimationNodeStateMachineTransition_btumj"), "Start", "Static", SubResource("AnimationNodeStateMachineTransition_mnd73"), "Static", "Falling", SubResource("AnimationNodeStateMachineTransition_tebpo")]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_afjmr")
+
+[node name="FallingPlatform3" type="Sprite2D" parent="."]
+position = Vector2(1, -1)
+texture = ExtResource("1_dky8b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.38419e-07, -2)
+scale = Vector2(0.962168, 0.935477)
+shape = SubResource("RectangleShape2D_fsv2m")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1.01403, 0.976993)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5.96046e-08, -9.21194)
+shape = SubResource("RectangleShape2D_be8kf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
+libraries = {
+"": SubResource("AnimationLibrary_4fas3")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_1ilyt")
+advance_expression_base_node = NodePath("../AnimationPlayer")
+anim_player = NodePath("../AnimationPlayer")
+script = ExtResource("2_stiqc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

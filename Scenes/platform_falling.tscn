@@ -238,10 +238,10 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_gkt1f"]
 states/Falling/node = SubResource("AnimationNodeAnimation_ky3nf")
-states/Falling/position = Vector2(621, 47)
+states/Falling/position = Vector2(620, 41)
 states/Regenerate/node = SubResource("AnimationNodeAnimation_iay3c")
 states/Regenerate/position = Vector2(763, 159)
-states/Start/position = Vector2(298, 132)
+states/Start/position = Vector2(305, 106)
 states/Static/node = SubResource("AnimationNodeAnimation_0545k")
 states/Static/position = Vector2(472, 159)
 transitions = ["Falling", "Regenerate", SubResource("AnimationNodeStateMachineTransition_rysbc"), "Regenerate", "Static", SubResource("AnimationNodeStateMachineTransition_pro37"), "Start", "Static", SubResource("AnimationNodeStateMachineTransition_06aqi"), "Static", "Falling", SubResource("AnimationNodeStateMachineTransition_hwa6l")]

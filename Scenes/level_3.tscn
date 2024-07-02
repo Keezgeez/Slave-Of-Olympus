@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://2k2qlk26h2i2"]
+[gd_scene load_steps=47 format=3 uid="uid://2k2qlk26h2i2"]
 
 [ext_resource type="Texture2D" uid="uid://b5fdxdkarmxpc" path="res://Assets/CloudBlocks/bottomleft_cloud.png" id="1_mj16c"]
 [ext_resource type="Script" path="res://Scenes/level_3.gd" id="1_qref0"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cgf0bttuvf7vv" path="res://Scenes/coin.tscn" id="18_g117r"]
 [ext_resource type="PackedScene" uid="uid://d34r7pt50vy11" path="res://Scenes/hud_level_3.tscn" id="19_xockr"]
 [ext_resource type="PackedScene" uid="uid://cqqbe72ijqyh5" path="res://Scenes/pause_menu.tscn" id="21_4eu15"]
+[ext_resource type="PackedScene" uid="uid://ckixnxm5187ce" path="res://PLATFORM_STAGE3.tscn" id="23_rk1iw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_885v7"]
 texture = ExtResource("1_mj16c")
@@ -279,7 +280,7 @@ shape = SubResource("CircleShape2D_5ip5a")
 [node name="Node2DCoin" type="Node2D" parent="."]
 
 [node name="Coin" parent="Node2DCoin" instance=ExtResource("18_g117r")]
-position = Vector2(375, -442)
+position = Vector2(363, -397)
 scale = Vector2(0.5, 0.5)
 
 [node name="Coin2" parent="Node2DCoin" instance=ExtResource("18_g117r")]
@@ -879,6 +880,9 @@ scale = Vector2(0.6, 0.6)
 
 [node name="Checkpoint2" parent="Node2DCheckpoint" instance=ExtResource("13_ftu0p")]
 position = Vector2(3346, -842)
+
+[node name="StaticBody2D" parent="." instance=ExtResource("23_rk1iw")]
+position = Vector2(289, -414)
 
 [connection signal="Fall" from="Slave" to="HP_Level3" method="_on_slave_fall"]
 [connection signal="pressed" from="Slave/Camera2D/PauseMenu/MarginContainer/VBoxContainer/Resume" to="Slave/Camera2D/PauseMenu" method="_on_resume_pressed"]
