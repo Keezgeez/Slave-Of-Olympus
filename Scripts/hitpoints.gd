@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-	var lives = 3
+var lives = 3
 
 signal Died
 @onready var slaave = $Slave
