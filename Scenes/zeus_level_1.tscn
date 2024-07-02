@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://djhoih1x624wk"]
+
+[ext_resource type="Script" path="res://ZeusLevel1.gd" id="1_6d842"]
+[ext_resource type="Texture2D" uid="uid://b5ebvhxlarycu" path="res://Assets/Zeus/ZEUZ.png" id="2_fdr8m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g88i0"]
+radius = 83.4865
+
+[node name="ZeusLevel1" type="Area2D"]
+script = ExtResource("1_6d842")
+
+[node name="Zeuz" type="Sprite2D" parent="."]
+position = Vector2(6, 2)
+texture = ExtResource("2_fdr8m")
+region_enabled = true
+region_rect = Rect2(240, 112, 80, 112)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 0)
+shape = SubResource("CircleShape2D_g88i0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

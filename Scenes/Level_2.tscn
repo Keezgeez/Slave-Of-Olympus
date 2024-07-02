@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://qlkum7x2dw3b" path="res://Scenes/canine.tscn" id="21_l3ihs"]
 [ext_resource type="PackedScene" uid="uid://c8j8seugnm1vc" path="res://Scenes/hitpoints.tscn" id="22_n4y3a"]
 [ext_resource type="PackedScene" uid="uid://os4ghk4whi15" path="res://Scenes/heart_pickups.tscn" id="23_sslqn"]
-[ext_resource type="PackedScene" uid="uid://dfyc06yulx50r" path="res://Scenes/zeus_tut.tscn" id="24_3jc6l"]
+[ext_resource type="PackedScene" uid="uid://c2jbqgak107ei" path="res://Scenes/zeus_level_2.tscn" id="27_jl55h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gw013"]
 texture = ExtResource("2_hx51f")
@@ -796,8 +796,8 @@ process_material = SubResource("ParticleProcessMaterial_kp1dt")
 position = Vector2(-17.9999, -81)
 scale = Vector2(0.289324, 0.260114)
 
-[node name="zeusTut" parent="." instance=ExtResource("24_3jc6l")]
-position = Vector2(3949, -1088)
+[node name="zeusLevel2" parent="." instance=ExtResource("27_jl55h")]
+position = Vector2(3929, -1099)
 
 [connection signal="body_entered" from="Node2DCoins/Coin5" to="HUD" method="_on_coin_3_body_entered"]
 [connection signal="body_entered" from="Node2DCoins/Coin7" to="HUD" method="_on_coin_3_body_entered"]

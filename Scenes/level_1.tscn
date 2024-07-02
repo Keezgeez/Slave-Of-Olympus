@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://x37756brqksv" path="res://Assets/Blocks/Stage1Block.png" id="2_rntk3"]
 [ext_resource type="PackedScene" uid="uid://bk5ts2kw0uv3n" path="res://Scenes/slave.tscn" id="3_leomu"]
 [ext_resource type="PackedScene" uid="uid://qlkum7x2dw3b" path="res://Scenes/canine.tscn" id="4_pkayt"]
-[ext_resource type="PackedScene" uid="uid://u8rednxgr1y3" path="res://Scenes/zeu_z.tscn" id="5_70ks0"]
 [ext_resource type="PackedScene" uid="uid://dujbfx3ykpkm4" path="res://Scenes/checkpoint.tscn" id="6_3m2q2"]
 [ext_resource type="FontVariation" uid="uid://dmhp6h0g7gnka" path="res://Pixelated.tres" id="6_fqpsd"]
 [ext_resource type="Script" path="res://Scenes/PauseMenuLevel1.gd" id="6_gyb7h"]
@@ -14,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://os4ghk4whi15" path="res://Scenes/heart_pickups.tscn" id="8_1b45y"]
 [ext_resource type="PackedScene" uid="uid://ca0cak2lncfvu" path="res://Scenes/hp_level_1.tscn" id="10_2aasw"]
 [ext_resource type="PackedScene" uid="uid://ds4g2alyym1nv" path="res://Scenes/k_illzone.tscn" id="10_6a6xe"]
+[ext_resource type="PackedScene" uid="uid://djhoih1x624wk" path="res://Scenes/zeus_level_1.tscn" id="14_qmjk8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_frgfu"]
 texture = ExtResource("1_xmvxm")
@@ -434,7 +434,7 @@ position = Vector2(6981, -953)
 scale = Vector2(0.6, 0.6)
 
 [node name="Slave" parent="." instance=ExtResource("3_leomu")]
-position = Vector2(605, -141)
+position = Vector2(36, -82)
 scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="Slave"]
@@ -496,9 +496,6 @@ position = Vector2(3866, -487)
 
 [node name="Canine2" parent="." instance=ExtResource("4_pkayt")]
 position = Vector2(4347, -488)
-
-[node name="ZeuZ" parent="." instance=ExtResource("5_70ks0")]
-position = Vector2(8728, -1047)
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -1083,6 +1080,9 @@ scale = Vector2(0.6, 0.6)
 [node name="Coin31" parent="." instance=ExtResource("7_ss1xb")]
 position = Vector2(8531, -967)
 scale = Vector2(0.6, 0.6)
+
+[node name="ZeusLevel1" parent="." instance=ExtResource("14_qmjk8")]
+position = Vector2(8729, -1033)
 
 [connection signal="Fall" from="Slave" to="HP_Level1" method="_on_slave_fall"]
 [connection signal="pressed" from="Slave/Camera2D/PauseMenu/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
