@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bm8dckq2mb1vr"]
+[gd_scene load_steps=52 format=3 uid="uid://bm8dckq2mb1vr"]
 
 [ext_resource type="PackedScene" uid="uid://bk5ts2kw0uv3n" path="res://Scenes/slave.tscn" id="1_6844a"]
 [ext_resource type="PackedScene" uid="uid://cgf0bttuvf7vv" path="res://Scenes/coin.tscn" id="1_n1ae5"]
@@ -96,9 +96,9 @@ sources/0 = SubResource("TileSetAtlasSource_gw013")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11dfx"]
 size = Vector2(80, 30)
 
-[sub_resource type="Animation" id="Animation_omsyo"]
+[sub_resource type="Animation" id="Animation_ph7v6"]
 resource_name = "move"
-length = 4.0
+length = 3.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -107,15 +107,31 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 4),
+"times": PackedFloat32Array(0, 1.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(336, 0), Vector2(0, 0)]
+"values": [Vector2(31, 7), Vector2(370, 7), Vector2(31, 7)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_x8mkm"]
+[sub_resource type="Animation" id="Animation_nmnpr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(370, 7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mf1rg"]
 _data = {
-"move": SubResource("Animation_omsyo")
+"RESET": SubResource("Animation_nmnpr"),
+"move": SubResource("Animation_ph7v6")
 }
 
 [sub_resource type="Animation" id="Animation_dc7ab"]
@@ -138,6 +154,44 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_05rig"]
 _data = {
 "moveup": SubResource("Animation_dc7ab")
+}
+
+[sub_resource type="Animation" id="Animation_an44c"]
+resource_name = "move"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(335, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xcmth"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(335, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_atyyh"]
+_data = {
+"RESET": SubResource("Animation_xcmth"),
+"move": SubResource("Animation_an44c")
 }
 
 [sub_resource type="Animation" id="Animation_0gk4k"]
@@ -415,22 +469,22 @@ position = Vector2(1552, 79)
 position = Vector2(1584, 79)
 
 [node name="firstMovingPlatform" type="AnimatableBody2D" parent="."]
-position = Vector2(44.1512, 0)
+position = Vector2(370, 7)
 script = ExtResource("11_0xv02")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="firstMovingPlatform"]
-position = Vector2(2985, 15)
+position = Vector2(2952, 7)
 shape = SubResource("RectangleShape2D_11dfx")
+
+[node name="PlatformFinal" type="Sprite2D" parent="firstMovingPlatform"]
+position = Vector2(2952, 23.5)
+scale = Vector2(2.5, 1.96875)
+texture = ExtResource("12_u3jji")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="firstMovingPlatform"]
 libraries = {
-"": SubResource("AnimationLibrary_x8mkm")
+"": SubResource("AnimationLibrary_mf1rg")
 }
-
-[node name="PlatformFinal" type="Sprite2D" parent="firstMovingPlatform"]
-position = Vector2(2985, 31.5)
-scale = Vector2(2.5, 1.96875)
-texture = ExtResource("12_u3jji")
 
 [node name="secondMovingPlatform" type="AnimatableBody2D" parent="."]
 script = ExtResource("13_lemwg")
@@ -454,22 +508,22 @@ libraries = {
 }
 
 [node name="thirdMovingPlatform" type="AnimatableBody2D" parent="."]
-position = Vector2(319.2, 0)
+position = Vector2(335, 0)
 script = ExtResource("14_vs3ws")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="thirdMovingPlatform"]
 position = Vector2(3944, -498)
 shape = SubResource("RectangleShape2D_11dfx")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="thirdMovingPlatform"]
-libraries = {
-"": SubResource("AnimationLibrary_x8mkm")
-}
-
 [node name="PlatformFinal" type="Sprite2D" parent="thirdMovingPlatform"]
 position = Vector2(3944, -481.5)
 scale = Vector2(2.5, 1.96875)
 texture = ExtResource("12_u3jji")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="thirdMovingPlatform"]
+libraries = {
+"": SubResource("AnimationLibrary_atyyh")
+}
 
 [node name="fourthMovingPlatform" type="AnimatableBody2D" parent="."]
 position = Vector2(336, 0)
@@ -490,7 +544,7 @@ libraries = {
 }
 
 [node name="fifthMovingPlatform" type="AnimatableBody2D" parent="."]
-position = Vector2(0, 446.587)
+position = Vector2(0, 339.72)
 script = ExtResource("16_ucaja")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fifthMovingPlatform"]
@@ -600,7 +654,6 @@ position = Vector2(5636, -944)
 position = Vector2(5572, -944)
 
 [node name="seventhMovingPlatform" type="AnimatableBody2D" parent="."]
-position = Vector2(0, 415)
 script = ExtResource("18_15r15")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="seventhMovingPlatform"]
