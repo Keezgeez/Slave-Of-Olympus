@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxjqa4ddwwc4b"]
+
+[ext_resource type="Script" path="res://Scenes/dialogue.gd" id="1_koqq7"]
+[ext_resource type="FontVariation" uid="uid://dmhp6h0g7gnka" path="res://Pixelated.tres" id="2_0pdn4"]
+
+[node name="Dialogue" type="Node2D"]
+script = ExtResource("1_koqq7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -146.0
+offset_top = 4.0
+offset_right = -106.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("2_0pdn4")
+theme_override_font_sizes/font_size = 20
+
+[node name="next_char" type="Timer" parent="Label"]
+
+[node name="next_message" type="Timer" parent="Label"]
+
+[node name="next_scene" type="Timer" parent="Label"]
+wait_time = 1.25
+
+[connection signal="timeout" from="Label/next_char" to="." method="_on_next_char_timeout"]
+[connection signal="timeout" from="Label/next_message" to="." method="_on_next_message_timeout"]
+[connection signal="timeout" from="Label/next_scene" to="." method="_on_next_scene_timeout"]
