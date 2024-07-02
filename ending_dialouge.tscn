@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://gx6urkpjyxli"]
+
+[ext_resource type="Script" path="res://ending_dialouge.gd" id="1_ua1tk"]
+
+[node name="endingDialouge" type="Node2D"]
+script = ExtResource("1_ua1tk")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="next_char" type="Timer" parent="Label"]
+
+[node name="next_message" type="Timer" parent="Label"]
+
+[node name="next_scene" type="Timer" parent="Label"]
+
+[connection signal="timeout" from="Label/next_char" to="." method="_on_next_char_timeout"]
+[connection signal="timeout" from="Label/next_message" to="." method="_on_next_message_timeout"]
+[connection signal="timeout" from="Label/next_scene" to="." method="_on_next_scene_timeout"]
