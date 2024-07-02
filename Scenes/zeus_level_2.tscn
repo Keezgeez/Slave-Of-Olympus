@@ -1,7 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2jbqgak107ei"]
+[gd_scene load_steps=9 format=3 uid="uid://1u3o3io0h0fl"]
 
 [ext_resource type="Script" path="res://zeusLevel2.gd" id="1_f1he0"]
-[ext_resource type="Texture2D" uid="uid://b5ebvhxlarycu" path="res://Assets/Zeus/ZEUZ.png" id="2_7oput"]
+[ext_resource type="Texture2D" uid="uid://cagjxuajkw3dh" path="res://Assets/Zeus/FinalZeus.png" id="2_vvg01"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_468pd"]
+atlas = ExtResource("2_vvg01")
+region = Rect2(0, 0, 80, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xjhx"]
+atlas = ExtResource("2_vvg01")
+region = Rect2(80, 0, 80, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omjds"]
+atlas = ExtResource("2_vvg01")
+region = Rect2(160, 0, 80, 112)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_je00t"]
+atlas = ExtResource("2_vvg01")
+region = Rect2(240, 0, 80, 112)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ladxr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_468pd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xjhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omjds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_je00t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kelva"]
 radius = 78.2304
@@ -9,11 +45,10 @@ radius = 78.2304
 [node name="zeusLevel2" type="Area2D"]
 script = ExtResource("1_f1he0")
 
-[node name="Zeuz" type="Sprite2D" parent="."]
-position = Vector2(-4, 2)
-texture = ExtResource("2_7oput")
-region_enabled = true
-region_rect = Rect2(232, 0, 88, 112)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ladxr")
+autoplay = "default"
+frame_progress = 0.129307
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)

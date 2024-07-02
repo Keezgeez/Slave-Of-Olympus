@@ -1,10 +1,9 @@
-[gd_scene load_steps=59 format=3 uid="uid://dsx6esxj04wgj"]
+[gd_scene load_steps=58 format=3 uid="uid://dsx6esxj04wgj"]
 
 [ext_resource type="Script" path="res://Scenes/Level_2.gd" id="1_gnkgl"]
 [ext_resource type="PackedScene" uid="uid://dujbfx3ykpkm4" path="res://Scenes/checkpoint.tscn" id="1_xwoty"]
 [ext_resource type="Texture2D" uid="uid://cj4gqtxan7bbj" path="res://Assets/Blocks/Design.png" id="2_hx51f"]
 [ext_resource type="PackedScene" uid="uid://bk5ts2kw0uv3n" path="res://Scenes/slave.tscn" id="3_yv53t"]
-[ext_resource type="Texture2D" uid="uid://bus3xuwmlo0rb" path="res://Assets/InGameBackground/GameBG.png" id="4_g5o17"]
 [ext_resource type="Texture2D" uid="uid://bnfeam3v2x6ct" path="res://Assets/Blocks/1.png" id="5_rod1v"]
 [ext_resource type="Script" path="res://Scenes/PauseMenu.gd" id="5_upqft"]
 [ext_resource type="Texture2D" uid="uid://cn12nhyeygvja" path="res://Assets/Blocks/2.png" id="6_xds65"]
@@ -26,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://qlkum7x2dw3b" path="res://Scenes/canine.tscn" id="21_l3ihs"]
 [ext_resource type="PackedScene" uid="uid://c8j8seugnm1vc" path="res://Scenes/hitpoints.tscn" id="22_n4y3a"]
 [ext_resource type="PackedScene" uid="uid://os4ghk4whi15" path="res://Scenes/heart_pickups.tscn" id="23_sslqn"]
-[ext_resource type="PackedScene" uid="uid://c2jbqgak107ei" path="res://Scenes/zeus_level_2.tscn" id="27_jl55h"]
+[ext_resource type="PackedScene" uid="uid://1u3o3io0h0fl" path="res://Scenes/zeus_level_2.tscn" id="27_jl55h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gw013"]
 texture = ExtResource("2_hx51f")
@@ -325,6 +324,13 @@ gravity = Vector3(0, 0, 0)
 position = Vector2(557, -95)
 script = ExtResource("1_gnkgl")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1551.0
+offset_top = -1495.0
+offset_right = 6923.0
+offset_bottom = 1732.0
+color = Color(0.421047, 0.238786, 0, 1)
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, -1)
 tile_set = SubResource("TileSet_c4rsw")
@@ -455,7 +461,7 @@ position = Vector2(3325, -20)
 position = Vector2(2983, -20)
 
 [node name="Slave" parent="." instance=ExtResource("3_yv53t")]
-position = Vector2(-145, -77)
+position = Vector2(-148, -74)
 
 [node name="Camera2D" type="Camera2D" parent="Slave"]
 position = Vector2(0, 2)
@@ -519,19 +525,29 @@ modulate = Color(1, 1, 1, 0.392157)
 position = Vector2(311, 546)
 motion_mirroring = Vector2(6, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Slave/Camera2D/ParallaxBackground/ParallaxLayer"]
-position = Vector2(952.5, -929.5)
-scale = Vector2(6.14107, 5.98315)
-texture = ExtResource("4_g5o17")
-
 [node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="."]
 position = Vector2(915, -113)
 scale = Vector2(0.65, 1)
 sprite_frames = SubResource("SpriteFrames_7x2h6")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(340, -50)
-scale = Vector2(0.5, 0.5)
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="."]
+position = Vector2(840, -113)
+scale = Vector2(0.65, 1)
+sprite_frames = SubResource("SpriteFrames_7x2h6")
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="."]
+position = Vector2(765, -113)
+scale = Vector2(0.65, 1)
+sprite_frames = SubResource("SpriteFrames_7x2h6")
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="."]
+position = Vector2(690, -113)
+scale = Vector2(0.65, 1)
+sprite_frames = SubResource("SpriteFrames_7x2h6")
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="."]
+position = Vector2(615, -113)
+scale = Vector2(0.65, 1)
 sprite_frames = SubResource("SpriteFrames_7x2h6")
 
 [node name="Checkpoint5" parent="." instance=ExtResource("1_xwoty")]

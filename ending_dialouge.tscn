@@ -1,13 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://gx6urkpjyxli"]
+[gd_scene load_steps=3 format=3 uid="uid://biukt7kvrl6ej"]
 
 [ext_resource type="Script" path="res://ending_dialouge.gd" id="1_ua1tk"]
+[ext_resource type="FontVariation" uid="uid://dmhp6h0g7gnka" path="res://Pixelated.tres" id="2_7c6yt"]
 
 [node name="endingDialouge" type="Node2D"]
 script = ExtResource("1_ua1tk")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -217.0
+offset_top = 102.0
+offset_right = -177.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("2_7c6yt")
+theme_override_font_sizes/font_size = 30
 
 [node name="next_char" type="Timer" parent="Label"]
 

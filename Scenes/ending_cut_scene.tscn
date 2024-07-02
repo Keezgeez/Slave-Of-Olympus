@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbw56psoyl5pr"]
+[gd_scene load_steps=8 format=3 uid="uid://bpiu6eqa7mbaj"]
 
 [ext_resource type="Script" path="res://Scenes/ending_cut_scene.gd" id="1_i3n5l"]
 [ext_resource type="PackedScene" uid="uid://u8rednxgr1y3" path="res://Scenes/zeu_z.tscn" id="3_015yq"]
-[ext_resource type="PackedScene" uid="uid://gx6urkpjyxli" path="res://ending_dialouge.tscn" id="4_f53px"]
+[ext_resource type="PackedScene" uid="uid://biukt7kvrl6ej" path="res://ending_dialouge.tscn" id="4_f53px"]
 [ext_resource type="Texture2D" uid="uid://dkc2tsdtlqndn" path="res://Assets/Slave/mc_idle.png" id="4_jgfvp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wopvr"]
@@ -50,5 +50,8 @@ position = Vector2(324, -104)
 scale = Vector2(1.81075, 1.70802)
 
 [node name="endingDialouge" parent="." instance=ExtResource("4_f53px")]
-position = Vector2(-4, 114)
+position = Vector2(-223, 199)
 scale = Vector2(-1.50475, 6644.36)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(197, 12)
