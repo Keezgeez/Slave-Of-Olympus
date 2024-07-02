@@ -1,29 +1,94 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqqbe72ijqyh5"]
+[gd_scene load_steps=6 format=3 uid="uid://cqqbe72ijqyh5"]
 
 [ext_resource type="FontVariation" uid="uid://dmhp6h0g7gnka" path="res://Pixelated.tres" id="1_iqfn5"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyglj"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 12.0
+expand_margin_top = 5.0
+expand_margin_right = 14.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbqp1"]
+bg_color = Color(0, 0, 0, 1)
+border_width_bottom = 1
+border_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 12.0
+expand_margin_top = 5.0
+expand_margin_right = 14.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4pul"]
+bg_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6reww"]
+bg_color = Color(0, 0, 0, 1)
+border_width_bottom = 1
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 4.0
+expand_margin_bottom = 5.0
+
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_left = -431.667
+offset_top = 635.0
+offset_right = -391.667
+offset_bottom = 675.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 370.0
+offset_top = -666.667
+offset_right = 514.0
+offset_bottom = -600.667
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
 theme_override_fonts/font = ExtResource("1_iqfn5")
-text = "Resume"
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_yyglj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kbqp1")
+text = "Resume
+"
 
-[node name="ReturnToMainMenu" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 358.333
+offset_top = -626.667
+offset_right = 528.333
+offset_bottom = -586.667
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="Return To Main Menu" type="Button" parent="MarginContainer2/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_iqfn5")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_q4pul")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6reww")
 text = "Return To Main Menu"

@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var pause_menu = $Slave/Camera2D/PauseMenu
-@onready var level_3 = $"."
+@onready var level_1 = $"."
 
 
 var paused = false
@@ -23,6 +23,3 @@ func pause_menuu():
 		Engine.time_scale = 0
 		
 	paused = !paused
-
-
-

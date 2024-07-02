@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://cyx741vppg140"]
+[gd_scene load_steps=23 format=3 uid="uid://cyx741vppg140"]
 
+[ext_resource type="Script" path="res://Scenes/level_1.gd" id="1_ao885"]
 [ext_resource type="PackedScene" uid="uid://dc42akxg4kuxs" path="res://Scenes/hud_level_1.tscn" id="1_mmb3d"]
 [ext_resource type="Texture2D" uid="uid://cj4gqtxan7bbj" path="res://Assets/Blocks/Design.png" id="1_xmvxm"]
 [ext_resource type="Texture2D" uid="uid://x37756brqksv" path="res://Assets/Blocks/Stage1Block.png" id="2_rntk3"]
@@ -7,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://qlkum7x2dw3b" path="res://Scenes/canine.tscn" id="4_pkayt"]
 [ext_resource type="PackedScene" uid="uid://u8rednxgr1y3" path="res://Scenes/zeu_z.tscn" id="5_70ks0"]
 [ext_resource type="PackedScene" uid="uid://dujbfx3ykpkm4" path="res://Scenes/checkpoint.tscn" id="6_3m2q2"]
+[ext_resource type="FontVariation" uid="uid://dmhp6h0g7gnka" path="res://Pixelated.tres" id="6_fqpsd"]
+[ext_resource type="Script" path="res://Scenes/PauseMenuLevel1.gd" id="6_gyb7h"]
 [ext_resource type="PackedScene" uid="uid://cgf0bttuvf7vv" path="res://Scenes/coin.tscn" id="7_ss1xb"]
 [ext_resource type="PackedScene" uid="uid://os4ghk4whi15" path="res://Scenes/heart_pickups.tscn" id="8_1b45y"]
 [ext_resource type="PackedScene" uid="uid://ca0cak2lncfvu" path="res://Scenes/hp_level_1.tscn" id="10_2aasw"]
@@ -353,9 +356,56 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_frgfu")
 sources/1 = SubResource("TileSetAtlasSource_e6otf")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mbupp"]
+bg_color = Color(0, 0, 0, 0.392157)
+border_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 51.0
+expand_margin_top = 5.0
+expand_margin_right = 58.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yiymf"]
+bg_color = Color(0, 0, 0, 1)
+border_width_bottom = 1
+border_color = Color(0, 1, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_left = 51.0
+expand_margin_top = 5.0
+expand_margin_right = 58.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33mc5"]
+bg_color = Color(0, 0, 0, 0.392157)
+border_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3obwi"]
+bg_color = Color(0, 0, 0, 1)
+border_width_bottom = 1
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_8sily"]
 
 [node name="Level1" type="Node2D"]
+script = ExtResource("1_ao885")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_qvhvi")
@@ -384,7 +434,7 @@ position = Vector2(6981, -953)
 scale = Vector2(0.6, 0.6)
 
 [node name="Slave" parent="." instance=ExtResource("3_leomu")]
-position = Vector2(5840, -259)
+position = Vector2(605, -141)
 scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="Slave"]
@@ -393,6 +443,53 @@ zoom = Vector2(2, 2)
 limit_left = 1
 limit_bottom = 200
 limit_smoothed = true
+
+[node name="PauseMenu" type="Control" parent="Slave/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_gyb7h")
+
+[node name="MarginContainer" type="MarginContainer" parent="Slave/Camera2D/PauseMenu"]
+layout_mode = 0
+offset_left = -28.3333
+offset_top = 8.33337
+offset_right = 31.6667
+offset_bottom = 48.3334
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Slave/Camera2D/PauseMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="Slave/Camera2D/PauseMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("6_fqpsd")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_mbupp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yiymf")
+text = "Resume"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Slave/Camera2D/PauseMenu"]
+layout_mode = 0
+offset_left = -80.0
+offset_top = 48.3333
+offset_right = 90.0
+offset_bottom = 88.3333
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Slave/Camera2D/PauseMenu/MarginContainer2"]
+layout_mode = 2
+
+[node name="Return To Main Menu" type="Button" parent="Slave/Camera2D/PauseMenu/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_fqpsd")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_33mc5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3obwi")
+text = "Return To Main Menu"
 
 [node name="Canine" parent="." instance=ExtResource("4_pkayt")]
 position = Vector2(3866, -487)
@@ -988,6 +1085,10 @@ position = Vector2(8531, -967)
 scale = Vector2(0.6, 0.6)
 
 [connection signal="Fall" from="Slave" to="HP_Level1" method="_on_slave_fall"]
+[connection signal="pressed" from="Slave/Camera2D/PauseMenu/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Slave/Camera2D/PauseMenu/MarginContainer/VBoxContainer/Resume" to="Slave/Camera2D/PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Slave/Camera2D/PauseMenu/MarginContainer2/VBoxContainer/Return To Main Menu" to="Slave/Camera2D/PauseMenu" method="_on_return_to_main_menu_pressed"]
+[connection signal="pressed" from="Slave/Camera2D/PauseMenu/MarginContainer2/VBoxContainer/Return To Main Menu" to="Slave/Camera2D/PauseMenu" method="_on_button_pressed"]
 [connection signal="body_entered" from="Node2D/Coin" to="HUD_Level1" method="_on_coin_body_entered"]
 [connection signal="body_entered" from="Node2D/Coin2" to="HUD_Level1" method="_on_coin_body_entered"]
 [connection signal="body_entered" from="Node2D/Coin3" to="HUD_Level1" method="_on_coin_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://2k2qlk26h2i2"]
+[gd_scene load_steps=46 format=3 uid="uid://2k2qlk26h2i2"]
 
 [ext_resource type="Texture2D" uid="uid://b5fdxdkarmxpc" path="res://Assets/CloudBlocks/bottomleft_cloud.png" id="1_mj16c"]
 [ext_resource type="Script" path="res://Scenes/level_3.gd" id="1_qref0"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Scenes/movingCloud3.gd" id="6_x3n4r"]
 [ext_resource type="Script" path="res://Scenes/movingCloud4.gd" id="7_0ct1t"]
 [ext_resource type="Texture2D" uid="uid://dclouquaydrxo" path="res://Assets/CloudBlocks/middle_cloud.png" id="7_x8dfg"]
+[ext_resource type="Script" path="res://Scenes/pause_menu.gd" id="11_hbe6f"]
 [ext_resource type="PackedScene" uid="uid://dujbfx3ykpkm4" path="res://Scenes/checkpoint.tscn" id="13_ftu0p"]
 [ext_resource type="PackedScene" uid="uid://b1ymkw850almm" path="res://Scenes/hp_level_3.tscn" id="15_mncsg"]
 [ext_resource type="PackedScene" uid="uid://os4ghk4whi15" path="res://Scenes/heart_pickups.tscn" id="16_mv3mf"]
@@ -256,18 +257,14 @@ position = Vector2(259, -382)
 scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="Slave"]
-position = Vector2(0, -100)
+position = Vector2(0, 1.66656)
 zoom = Vector2(2, 2)
 limit_left = 1
 limit_bottom = 220
 limit_smoothed = true
 
-[node name="PauseMenu" parent="Slave" instance=ExtResource("21_4eu15")]
-offset_left = -78.3333
-offset_top = -155.0
-offset_right = -78.3333
-offset_bottom = -155.0
-metadata/_edit_use_anchors_ = true
+[node name="PauseMenu" parent="Slave/Camera2D" instance=ExtResource("21_4eu15")]
+script = ExtResource("11_hbe6f")
 
 [node name="HP_Level3" parent="." instance=ExtResource("15_mncsg")]
 
@@ -884,6 +881,8 @@ scale = Vector2(0.6, 0.6)
 position = Vector2(3346, -842)
 
 [connection signal="Fall" from="Slave" to="HP_Level3" method="_on_slave_fall"]
+[connection signal="pressed" from="Slave/Camera2D/PauseMenu/MarginContainer/VBoxContainer/Resume" to="Slave/Camera2D/PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="Slave/Camera2D/PauseMenu/MarginContainer2/VBoxContainer/Return To Main Menu" to="Slave/Camera2D/PauseMenu" method="_on_return_to_main_menu_pressed"]
 [connection signal="body_entered" from="Killzone" to="HP_Level3" method="_on_killzone_body_entered"]
 [connection signal="body_entered" from="Node2DCoin/Coin" to="HUD_Level3" method="_on_coin_body_entered"]
 [connection signal="body_entered" from="Node2DCoin/Coin2" to="HUD_Level3" method="_on_coin_body_entered"]
@@ -1015,3 +1014,5 @@ position = Vector2(3346, -842)
 [connection signal="body_entered" from="Node2DCoin/Coin121" to="HUD_Level3" method="_on_coin_body_entered"]
 [connection signal="addHeart" from="PowerUPs/heartPickups" to="HP_Level3" method="_on_heart_pickups_add_heart"]
 [connection signal="addHeart" from="PowerUPs/heartPickups2" to="HP_Level3" method="_on_heart_pickups_add_heart"]
+
+[editable path="Slave/Camera2D/PauseMenu"]

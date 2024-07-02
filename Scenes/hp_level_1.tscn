@@ -86,4 +86,4 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ew2c2")
 [node name="HP_Level1" type="AnimatedSprite2D" parent="."]
 position = Vector2(187.5, 48)
 sprite_frames = SubResource("SpriteFrames_gd06a")
-animation = &"No_hart"
+animation = &"1_hart"

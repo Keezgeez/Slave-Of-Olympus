@@ -4,7 +4,7 @@ var lives = 3
 
 signal Died
 @onready var slaave = $Slave
-@onready var hp_level_1 = $Panel/HP_Level1
+@onready var hp_level_1 = $HP_Level1
 @onready var killzone = $"."
 @onready var pickups = $heartPickups
 
