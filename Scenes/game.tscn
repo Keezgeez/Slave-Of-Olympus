@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ccpvb5lk5ucrc" path="res://Assets/Blocks/4.png" id="5_8g3jq"]
 [ext_resource type="PackedScene" uid="uid://ds4g2alyym1nv" path="res://Scenes/k_illzone.tscn" id="8_5kiph"]
 [ext_resource type="PackedScene" uid="uid://qlkum7x2dw3b" path="res://Scenes/canine.tscn" id="9_7hhp0"]
-[ext_resource type="PackedScene" uid="uid://c66sd07qyxyht" path="res://Scenes/platform_falling.tscn" id="10_g8kep"]
+[ext_resource type="PackedScene" path="res://Scenes/platform_falling.tscn" id="10_g8kep"]
 [ext_resource type="Script" path="res://Scripts/firstMovingPlatform.gd" id="11_0xv02"]
 [ext_resource type="Texture2D" uid="uid://cd76kbadg0apk" path="res://Assets/Blocks/PlatformFinal.png" id="12_u3jji"]
 [ext_resource type="Script" path="res://Scripts/secondMovingPlatform.gd" id="13_lemwg"]
@@ -17,9 +17,9 @@
 [ext_resource type="Script" path="res://Scripts/fifthMovingPlatform.gd" id="16_ucaja"]
 [ext_resource type="Script" path="res://Scripts/sixthMovingPlatform.gd" id="17_jwtfm"]
 [ext_resource type="Script" path="res://Scripts/seventhMovingPlatform.gd" id="18_15r15"]
-[ext_resource type="PackedScene" uid="uid://bplaekyvrylor" path="res://Scenes/hitpoints.tscn" id="20_12ydy"]
-[ext_resource type="PackedScene" uid="uid://4wgs2qpp7ss6" path="res://Scenes/hud.tscn" id="20_rwnhf"]
-[ext_resource type="PackedScene" uid="uid://dujbfx3ykpkm4" path="res://Scenes/checkpoint.tscn" id="21_ssroo"]
+[ext_resource type="PackedScene" path="res://Scenes/hitpoints.tscn" id="20_12ydy"]
+[ext_resource type="PackedScene" path="res://Scenes/hud.tscn" id="20_rwnhf"]
+[ext_resource type="PackedScene" path="res://Scenes/checkpoint.tscn" id="21_ssroo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ovi3u"]
 texture = ExtResource("2_co6eg")

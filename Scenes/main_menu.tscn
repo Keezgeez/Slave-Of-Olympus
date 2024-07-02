@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cpxgs0xt4hrks"]
+[gd_scene load_steps=14 format=3 uid="uid://b2ddyj4q1fhk8"]
 
 [ext_resource type="Script" path="res://Main Menu.gd" id="1_uhn3n"]
 [ext_resource type="Texture2D" uid="uid://bcqpewgiwdwhg" path="res://Assets/MainMenu/Background.jpg" id="2_dypto"]
@@ -199,5 +199,5 @@ volume_db = -20.0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HowToPlay" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer2/VBoxContainer/Play" to="." method="_on_how_to_play_pressed"]
-[connection signal="pressed" from="MarginContainer3/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="MarginContainer3/Quit" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="MarginContainer3/Quit" to="." method="_on_quit_pressed"]
